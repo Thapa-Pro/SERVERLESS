@@ -1,0 +1,36 @@
+# "org" ensures this Service is used with the correct Serverless Framework Access Key.
+org: frontend2024thapa
+# "service" is the name of this project. This will also be added to your AWS resource names.
+service: top10Books
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  region: eu-north-1
+  iam:
+    role: arn:aws:iam::115851773339:role/BasicLambdaRole4BookAPI
+  # Uncomment to easily set up a custom domain. Read the docs for more details:
+  # https://www.serverless.com/framework/docs/providers/aws/guide/domains
+  # domain: api.example.com
+
+functions:
+  GetInsults:
+    handler: functions/GetBooks/index.handler
+    events:
+      - httpApi:
+          path: /api/books
+          method: GET
+
+  GetInsultsById:
+    handler: functions/GetBookById/index.handler
+    events:
+      - httpApi:
+          path: /api/books/{id}
+          method: GET
+
+  PostInsult:
+    handler: functions/PostBook/index.handler
+    events:
+      - httpApi:
+          path: /api/books
+          method: POST
