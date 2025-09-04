@@ -34,3 +34,10 @@ functions:
       - httpApi:
           path: /api/books
           method: POST
+
+  DeleteBook:
+    handler: functions/DeleteBook/index.handler
+    events:
+      - httpApi:
+          path: /api/books/{id}
+          method: DELETE
