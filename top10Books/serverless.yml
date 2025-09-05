@@ -14,21 +14,21 @@ provider:
   # domain: api.example.com
 
 functions:
-  GetInsults:
+  GetBooks:
     handler: functions/GetBooks/index.handler
     events:
       - httpApi:
           path: /api/books
           method: GET
 
-  GetInsultsById:
+  GetBookById:
     handler: functions/GetBookById/index.handler
     events:
       - httpApi:
           path: /api/books/{id}
           method: GET
 
-  PostInsult:
+  PostBook:
     handler: functions/PostBook/index.handler
     events:
       - httpApi:
