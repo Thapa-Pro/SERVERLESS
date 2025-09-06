@@ -69,6 +69,14 @@ export const books = [
     year: 2013,
     genre: "Novel",
   },
+
+  {
+    id: 11,
+    title: "Egenmäktigt förfarande 11",
+    author: "Lena Andersson",
+    year: 2013,
+    genre: "Novel",
+  },
 ];
 
 export const handler = async (event) => {
