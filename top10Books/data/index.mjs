@@ -71,8 +71,8 @@ export const books = [
   },
 
   {
-    id: 1222,
-    title: "Egenmäktigt förfarande 1222",
+    id: 11,
+    title: "Egenmäktigt förfarande 11",
     author: "Lena Andersson",
     year: 2013,
     genre: "Novel",
