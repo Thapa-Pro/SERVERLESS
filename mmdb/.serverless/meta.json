@@ -1,12 +1,982 @@
 {
-  "unknown": {
+  "C:\\Users\\bachc\\OneDrive\\Desktop\\Serverless\\SERVERLESS ++\\mmdb\\serverless.yml": {
     "versionFramework": "4.18.2",
-    "command": [],
+    "servicePath": "C:\\Users\\bachc\\OneDrive\\Desktop\\Serverless\\SERVERLESS ++\\mmdb\\serverless.yml",
+    "serviceConfigFileName": "serverless.yml",
+    "service": {
+      "org": "frontend2024thapa",
+      "service": "mmdb",
+      "provider": {
+        "name": "aws",
+        "runtime": "nodejs20.x",
+        "region": "eu-north-1",
+        "iam": {
+          "role": "arn:aws:iam::115851773339:role/BasicLambdaRole"
+        },
+        "stage": "dev",
+        "versionFunctions": true,
+        "compiledCloudFormationTemplate": {
+          "AWSTemplateFormatVersion": "2010-09-09",
+          "Description": "The AWS CloudFormation template for this Serverless application",
+          "Resources": {
+            "GetKeyLogGroup": {
+              "Type": "AWS::Logs::LogGroup",
+              "Properties": {
+                "LogGroupName": "/aws/lambda/mmdb-dev-GetKey"
+              }
+            },
+            "GetMoviesLogGroup": {
+              "Type": "AWS::Logs::LogGroup",
+              "Properties": {
+                "LogGroupName": "/aws/lambda/mmdb-dev-GetMovies"
+              }
+            },
+            "GetKeyLambdaFunction": {
+              "Type": "AWS::Lambda::Function",
+              "Properties": {
+                "Code": {
+                  "S3Bucket": "serverless-framework-deployments-eu-north-1-c3c8091d-0b7f",
+                  "S3Key": "serverless/mmdb/dev/1757152762373-2025-09-06T09:59:22.373Z/mmdb.zip"
+                },
+                "Handler": "functions/GetKey/index.handler",
+                "Runtime": "nodejs20.x",
+                "FunctionName": "mmdb-dev-GetKey",
+                "MemorySize": 1024,
+                "Timeout": 6,
+                "Role": "arn:aws:iam::115851773339:role/BasicLambdaRole"
+              },
+              "DependsOn": [
+                "GetKeyLogGroup"
+              ]
+            },
+            "GetMoviesLambdaFunction": {
+              "Type": "AWS::Lambda::Function",
+              "Properties": {
+                "Code": {
+                  "S3Bucket": "serverless-framework-deployments-eu-north-1-c3c8091d-0b7f",
+                  "S3Key": "serverless/mmdb/dev/1757152762373-2025-09-06T09:59:22.373Z/mmdb.zip"
+                },
+                "Handler": "functions/GetMovies/index.handler",
+                "Runtime": "nodejs20.x",
+                "FunctionName": "mmdb-dev-GetMovies",
+                "MemorySize": 1024,
+                "Timeout": 6,
+                "Role": "arn:aws:iam::115851773339:role/BasicLambdaRole"
+              },
+              "DependsOn": [
+                "GetMoviesLogGroup"
+              ]
+            },
+            "GetKeyLambdaVersionSR7XKua8W22EYWFVbAqzHzIJo4Ez8ZGwrABqaSMmU": {
+              "Type": "AWS::Lambda::Version",
+              "DeletionPolicy": "Retain",
+              "Properties": {
+                "FunctionName": {
+                  "Ref": "GetKeyLambdaFunction"
+                },
+                "CodeSha256": "k+48qSWXO2h7jQompvrZUCyAZA1fxw3Zkcx+3TqcB38="
+              }
+            },
+            "GetMoviesLambdaVersion31vBCi16vJXPzXFqgWcFp9Z7U6AHbYdWCD6mRele5w": {
+              "Type": "AWS::Lambda::Version",
+              "DeletionPolicy": "Retain",
+              "Properties": {
+                "FunctionName": {
+                  "Ref": "GetMoviesLambdaFunction"
+                },
+                "CodeSha256": "k+48qSWXO2h7jQompvrZUCyAZA1fxw3Zkcx+3TqcB38="
+              }
+            },
+            "HttpApi": {
+              "Type": "AWS::ApiGatewayV2::Api",
+              "Properties": {
+                "Name": "dev-mmdb",
+                "ProtocolType": "HTTP"
+              }
+            },
+            "HttpApiStage": {
+              "Type": "AWS::ApiGatewayV2::Stage",
+              "Properties": {
+                "ApiId": {
+                  "Ref": "HttpApi"
+                },
+                "StageName": "$default",
+                "AutoDeploy": true,
+                "DefaultRouteSettings": {
+                  "DetailedMetricsEnabled": false
+                }
+              }
+            },
+            "GetKeyLambdaPermissionHttpApi": {
+              "Type": "AWS::Lambda::Permission",
+              "Properties": {
+                "FunctionName": {
+                  "Fn::GetAtt": [
+                    "GetKeyLambdaFunction",
+                    "Arn"
+                  ]
+                },
+                "Action": "lambda:InvokeFunction",
+                "Principal": "apigateway.amazonaws.com",
+                "SourceArn": {
+                  "Fn::Join": [
+                    "",
+                    [
+                      "arn:",
+                      {
+                        "Ref": "AWS::Partition"
+                      },
+                      ":execute-api:",
+                      {
+                        "Ref": "AWS::Region"
+                      },
+                      ":",
+                      {
+                        "Ref": "AWS::AccountId"
+                      },
+                      ":",
+                      {
+                        "Ref": "HttpApi"
+                      },
+                      "/*"
+                    ]
+                  ]
+                }
+              }
+            },
+            "HttpApiIntegrationGetKey": {
+              "Type": "AWS::ApiGatewayV2::Integration",
+              "Properties": {
+                "ApiId": {
+                  "Ref": "HttpApi"
+                },
+                "IntegrationType": "AWS_PROXY",
+                "IntegrationUri": {
+                  "Fn::GetAtt": [
+                    "GetKeyLambdaFunction",
+                    "Arn"
+                  ]
+                },
+                "PayloadFormatVersion": "2.0",
+                "TimeoutInMillis": 30000
+              }
+            },
+            "HttpApiRouteGetApiKeys": "<REDACTED>",
+            "GetMoviesLambdaPermissionHttpApi": {
+              "Type": "AWS::Lambda::Permission",
+              "Properties": {
+                "FunctionName": {
+                  "Fn::GetAtt": [
+                    "GetMoviesLambdaFunction",
+                    "Arn"
+                  ]
+                },
+                "Action": "lambda:InvokeFunction",
+                "Principal": "apigateway.amazonaws.com",
+                "SourceArn": {
+                  "Fn::Join": [
+                    "",
+                    [
+                      "arn:",
+                      {
+                        "Ref": "AWS::Partition"
+                      },
+                      ":execute-api:",
+                      {
+                        "Ref": "AWS::Region"
+                      },
+                      ":",
+                      {
+                        "Ref": "AWS::AccountId"
+                      },
+                      ":",
+                      {
+                        "Ref": "HttpApi"
+                      },
+                      "/*"
+                    ]
+                  ]
+                }
+              }
+            },
+            "HttpApiIntegrationGetMovies": {
+              "Type": "AWS::ApiGatewayV2::Integration",
+              "Properties": {
+                "ApiId": {
+                  "Ref": "HttpApi"
+                },
+                "IntegrationType": "AWS_PROXY",
+                "IntegrationUri": {
+                  "Fn::GetAtt": [
+                    "GetMoviesLambdaFunction",
+                    "Arn"
+                  ]
+                },
+                "PayloadFormatVersion": "2.0",
+                "TimeoutInMillis": 30000
+              }
+            },
+            "HttpApiRouteGetApiMovies": {
+              "Type": "AWS::ApiGatewayV2::Route",
+              "Properties": {
+                "ApiId": {
+                  "Ref": "HttpApi"
+                },
+                "RouteKey": "GET /api/movies",
+                "Target": {
+                  "Fn::Join": [
+                    "/",
+                    [
+                      "integrations",
+                      {
+                        "Ref": "HttpApiIntegrationGetMovies"
+                      }
+                    ]
+                  ]
+                }
+              },
+              "DependsOn": "HttpApiIntegrationGetMovies"
+            }
+          },
+          "Outputs": {
+            "ServerlessDeploymentBucketName": {
+              "Value": "serverless-framework-deployments-eu-north-1-c3c8091d-0b7f",
+              "Export": {
+                "Name": "sls-mmdb-dev-ServerlessDeploymentBucketName"
+              }
+            },
+            "GetKeyLambdaFunctionQualifiedArn": {
+              "Description": "Current Lambda function version",
+              "Value": {
+                "Ref": "GetKeyLambdaVersionSR7XKua8W22EYWFVbAqzHzIJo4Ez8ZGwrABqaSMmU"
+              },
+              "Export": {
+                "Name": "sls-mmdb-dev-GetKeyLambdaFunctionQualifiedArn"
+              }
+            },
+            "GetMoviesLambdaFunctionQualifiedArn": {
+              "Description": "Current Lambda function version",
+              "Value": {
+                "Ref": "GetMoviesLambdaVersion31vBCi16vJXPzXFqgWcFp9Z7U6AHbYdWCD6mRele5w"
+              },
+              "Export": {
+                "Name": "sls-mmdb-dev-GetMoviesLambdaFunctionQualifiedArn"
+              }
+            },
+            "HttpApiId": {
+              "Description": "Id of the HTTP API",
+              "Value": {
+                "Ref": "HttpApi"
+              },
+              "Export": {
+                "Name": "sls-mmdb-dev-HttpApiId"
+              }
+            },
+            "HttpApiUrl": {
+              "Description": "URL of the HTTP API",
+              "Value": {
+                "Fn::Join": [
+                  "",
+                  [
+                    "https://",
+                    {
+                      "Ref": "HttpApi"
+                    },
+                    ".execute-api.",
+                    {
+                      "Ref": "AWS::Region"
+                    },
+                    ".",
+                    {
+                      "Ref": "AWS::URLSuffix"
+                    }
+                  ]
+                ]
+              },
+              "Export": {
+                "Name": "sls-mmdb-dev-HttpApiUrl"
+              }
+            }
+          }
+        },
+        "vpc": {}
+      },
+      "functions": {
+        "GetKey": {
+          "handler": "functions/GetKey/index.handler",
+          "events": [
+            {
+              "httpApi": {
+                "path": "/api/keys",
+                "method": "GET"
+              },
+              "resolvedMethod": "GET",
+              "resolvedPath": "/api/keys"
+            }
+          ],
+          "name": "mmdb-dev-GetKey",
+          "package": {},
+          "memory": 1024,
+          "timeout": 6,
+          "runtime": "nodejs20.x",
+          "vpc": {},
+          "versionLogicalId": "GetKeyLambdaVersionSR7XKua8W22EYWFVbAqzHzIJo4Ez8ZGwrABqaSMmU"
+        },
+        "GetMovies": {
+          "handler": "functions/GetMovies/index.handler",
+          "events": [
+            {
+              "httpApi": {
+                "path": "/api/movies",
+                "method": "GET"
+              },
+              "resolvedMethod": "GET",
+              "resolvedPath": "/api/movies"
+            }
+          ],
+          "name": "mmdb-dev-GetMovies",
+          "package": {},
+          "memory": 1024,
+          "timeout": 6,
+          "runtime": "nodejs20.x",
+          "vpc": {},
+          "versionLogicalId": "GetMoviesLambdaVersion31vBCi16vJXPzXFqgWcFp9Z7U6AHbYdWCD6mRele5w"
+        }
+      }
+    },
+    "provider": {
+      "name": "aws",
+      "runtime": "nodejs20.x",
+      "region": "eu-north-1",
+      "iam": {
+        "role": "arn:aws:iam::115851773339:role/BasicLambdaRole"
+      },
+      "stage": "dev",
+      "versionFunctions": true,
+      "compiledCloudFormationTemplate": {
+        "AWSTemplateFormatVersion": "2010-09-09",
+        "Description": "The AWS CloudFormation template for this Serverless application",
+        "Resources": {
+          "GetKeyLogGroup": {
+            "Type": "AWS::Logs::LogGroup",
+            "Properties": {
+              "LogGroupName": "/aws/lambda/mmdb-dev-GetKey"
+            }
+          },
+          "GetMoviesLogGroup": {
+            "Type": "AWS::Logs::LogGroup",
+            "Properties": {
+              "LogGroupName": "/aws/lambda/mmdb-dev-GetMovies"
+            }
+          },
+          "GetKeyLambdaFunction": {
+            "Type": "AWS::Lambda::Function",
+            "Properties": {
+              "Code": {
+                "S3Bucket": "serverless-framework-deployments-eu-north-1-c3c8091d-0b7f",
+                "S3Key": "serverless/mmdb/dev/1757152762373-2025-09-06T09:59:22.373Z/mmdb.zip"
+              },
+              "Handler": "functions/GetKey/index.handler",
+              "Runtime": "nodejs20.x",
+              "FunctionName": "mmdb-dev-GetKey",
+              "MemorySize": 1024,
+              "Timeout": 6,
+              "Role": "arn:aws:iam::115851773339:role/BasicLambdaRole"
+            },
+            "DependsOn": [
+              "GetKeyLogGroup"
+            ]
+          },
+          "GetMoviesLambdaFunction": {
+            "Type": "AWS::Lambda::Function",
+            "Properties": {
+              "Code": {
+                "S3Bucket": "serverless-framework-deployments-eu-north-1-c3c8091d-0b7f",
+                "S3Key": "serverless/mmdb/dev/1757152762373-2025-09-06T09:59:22.373Z/mmdb.zip"
+              },
+              "Handler": "functions/GetMovies/index.handler",
+              "Runtime": "nodejs20.x",
+              "FunctionName": "mmdb-dev-GetMovies",
+              "MemorySize": 1024,
+              "Timeout": 6,
+              "Role": "arn:aws:iam::115851773339:role/BasicLambdaRole"
+            },
+            "DependsOn": [
+              "GetMoviesLogGroup"
+            ]
+          },
+          "GetKeyLambdaVersionSR7XKua8W22EYWFVbAqzHzIJo4Ez8ZGwrABqaSMmU": {
+            "Type": "AWS::Lambda::Version",
+            "DeletionPolicy": "Retain",
+            "Properties": {
+              "FunctionName": {
+                "Ref": "GetKeyLambdaFunction"
+              },
+              "CodeSha256": "k+48qSWXO2h7jQompvrZUCyAZA1fxw3Zkcx+3TqcB38="
+            }
+          },
+          "GetMoviesLambdaVersion31vBCi16vJXPzXFqgWcFp9Z7U6AHbYdWCD6mRele5w": {
+            "Type": "AWS::Lambda::Version",
+            "DeletionPolicy": "Retain",
+            "Properties": {
+              "FunctionName": {
+                "Ref": "GetMoviesLambdaFunction"
+              },
+              "CodeSha256": "k+48qSWXO2h7jQompvrZUCyAZA1fxw3Zkcx+3TqcB38="
+            }
+          },
+          "HttpApi": {
+            "Type": "AWS::ApiGatewayV2::Api",
+            "Properties": {
+              "Name": "dev-mmdb",
+              "ProtocolType": "HTTP"
+            }
+          },
+          "HttpApiStage": {
+            "Type": "AWS::ApiGatewayV2::Stage",
+            "Properties": {
+              "ApiId": {
+                "Ref": "HttpApi"
+              },
+              "StageName": "$default",
+              "AutoDeploy": true,
+              "DefaultRouteSettings": {
+                "DetailedMetricsEnabled": false
+              }
+            }
+          },
+          "GetKeyLambdaPermissionHttpApi": {
+            "Type": "AWS::Lambda::Permission",
+            "Properties": {
+              "FunctionName": {
+                "Fn::GetAtt": [
+                  "GetKeyLambdaFunction",
+                  "Arn"
+                ]
+              },
+              "Action": "lambda:InvokeFunction",
+              "Principal": "apigateway.amazonaws.com",
+              "SourceArn": {
+                "Fn::Join": [
+                  "",
+                  [
+                    "arn:",
+                    {
+                      "Ref": "AWS::Partition"
+                    },
+                    ":execute-api:",
+                    {
+                      "Ref": "AWS::Region"
+                    },
+                    ":",
+                    {
+                      "Ref": "AWS::AccountId"
+                    },
+                    ":",
+                    {
+                      "Ref": "HttpApi"
+                    },
+                    "/*"
+                  ]
+                ]
+              }
+            }
+          },
+          "HttpApiIntegrationGetKey": {
+            "Type": "AWS::ApiGatewayV2::Integration",
+            "Properties": {
+              "ApiId": {
+                "Ref": "HttpApi"
+              },
+              "IntegrationType": "AWS_PROXY",
+              "IntegrationUri": {
+                "Fn::GetAtt": [
+                  "GetKeyLambdaFunction",
+                  "Arn"
+                ]
+              },
+              "PayloadFormatVersion": "2.0",
+              "TimeoutInMillis": 30000
+            }
+          },
+          "HttpApiRouteGetApiKeys": "<REDACTED>",
+          "GetMoviesLambdaPermissionHttpApi": {
+            "Type": "AWS::Lambda::Permission",
+            "Properties": {
+              "FunctionName": {
+                "Fn::GetAtt": [
+                  "GetMoviesLambdaFunction",
+                  "Arn"
+                ]
+              },
+              "Action": "lambda:InvokeFunction",
+              "Principal": "apigateway.amazonaws.com",
+              "SourceArn": {
+                "Fn::Join": [
+                  "",
+                  [
+                    "arn:",
+                    {
+                      "Ref": "AWS::Partition"
+                    },
+                    ":execute-api:",
+                    {
+                      "Ref": "AWS::Region"
+                    },
+                    ":",
+                    {
+                      "Ref": "AWS::AccountId"
+                    },
+                    ":",
+                    {
+                      "Ref": "HttpApi"
+                    },
+                    "/*"
+                  ]
+                ]
+              }
+            }
+          },
+          "HttpApiIntegrationGetMovies": {
+            "Type": "AWS::ApiGatewayV2::Integration",
+            "Properties": {
+              "ApiId": {
+                "Ref": "HttpApi"
+              },
+              "IntegrationType": "AWS_PROXY",
+              "IntegrationUri": {
+                "Fn::GetAtt": [
+                  "GetMoviesLambdaFunction",
+                  "Arn"
+                ]
+              },
+              "PayloadFormatVersion": "2.0",
+              "TimeoutInMillis": 30000
+            }
+          },
+          "HttpApiRouteGetApiMovies": {
+            "Type": "AWS::ApiGatewayV2::Route",
+            "Properties": {
+              "ApiId": {
+                "Ref": "HttpApi"
+              },
+              "RouteKey": "GET /api/movies",
+              "Target": {
+                "Fn::Join": [
+                  "/",
+                  [
+                    "integrations",
+                    {
+                      "Ref": "HttpApiIntegrationGetMovies"
+                    }
+                  ]
+                ]
+              }
+            },
+            "DependsOn": "HttpApiIntegrationGetMovies"
+          }
+        },
+        "Outputs": {
+          "ServerlessDeploymentBucketName": {
+            "Value": "serverless-framework-deployments-eu-north-1-c3c8091d-0b7f",
+            "Export": {
+              "Name": "sls-mmdb-dev-ServerlessDeploymentBucketName"
+            }
+          },
+          "GetKeyLambdaFunctionQualifiedArn": {
+            "Description": "Current Lambda function version",
+            "Value": {
+              "Ref": "GetKeyLambdaVersionSR7XKua8W22EYWFVbAqzHzIJo4Ez8ZGwrABqaSMmU"
+            },
+            "Export": {
+              "Name": "sls-mmdb-dev-GetKeyLambdaFunctionQualifiedArn"
+            }
+          },
+          "GetMoviesLambdaFunctionQualifiedArn": {
+            "Description": "Current Lambda function version",
+            "Value": {
+              "Ref": "GetMoviesLambdaVersion31vBCi16vJXPzXFqgWcFp9Z7U6AHbYdWCD6mRele5w"
+            },
+            "Export": {
+              "Name": "sls-mmdb-dev-GetMoviesLambdaFunctionQualifiedArn"
+            }
+          },
+          "HttpApiId": {
+            "Description": "Id of the HTTP API",
+            "Value": {
+              "Ref": "HttpApi"
+            },
+            "Export": {
+              "Name": "sls-mmdb-dev-HttpApiId"
+            }
+          },
+          "HttpApiUrl": {
+            "Description": "URL of the HTTP API",
+            "Value": {
+              "Fn::Join": [
+                "",
+                [
+                  "https://",
+                  {
+                    "Ref": "HttpApi"
+                  },
+                  ".execute-api.",
+                  {
+                    "Ref": "AWS::Region"
+                  },
+                  ".",
+                  {
+                    "Ref": "AWS::URLSuffix"
+                  }
+                ]
+              ]
+            },
+            "Export": {
+              "Name": "sls-mmdb-dev-HttpApiUrl"
+            }
+          }
+        }
+      },
+      "vpc": {}
+    },
+    "dashboard": {
+      "isEnabledForService": false,
+      "requiredAuthentication": false,
+      "orgFeaturesInUse": null,
+      "orgObservabilityIntegrations": null,
+      "serviceAppId": null,
+      "serviceProvider": null,
+      "instanceParameters": null
+    },
+    "serviceRawFile": "# \"org\" ensures this Service is used with the correct Serverless Framework Access Key.\norg: frontend2024thapa\n# \"service\" is the name of this project. This will also be added to your AWS resource names.\nservice: mmdb\n\nprovider:\n  name: aws\n  runtime: nodejs20.x\n  region: eu-north-1\n  iam:\n    role: arn:aws:iam::115851773339:role/BasicLambdaRole\n  # Uncomment to easily set up a custom domain. Read the docs for more details:\n  # https://www.serverless.com/framework/docs/providers/aws/guide/domains\n  # domain: api.example.com\n\nfunctions:\n  GetKey:\n    handler: functions/GetKey/index.handler\n    events:\n      - httpApi:\n          path: /api/keys\n          method: GET\n\n  GetMovies:\n    handler: functions/GetMovies/index.handler\n    events:\n      - httpApi:\n          path: /api/movies\n          method: GET\n",
+    "command": [
+      "deploy"
+    ],
     "options": {},
-    "serviceProviderAwsCfStackId": null,
-    "serviceProviderAwsCfStackCreated": null,
+    "orgId": "d500ec05-b67c-4592-8396-1c3a8be7a4d3",
+    "orgName": "frontend2024thapa",
+    "userId": "kF0jz6vSGYDtGnfsHQ",
+    "userName": "frontend2024thapa",
+    "serviceProviderAwsAccountId": "115851773339",
+    "serviceProviderAwsCfStackName": "mmdb-dev",
+    "serviceProviderAwsCfStackId": "arn:aws:cloudformation:eu-north-1:115851773339:stack/mmdb-dev/cba39c80-8b05-11f0-8f96-0a5840b88019",
+    "serviceProviderAwsCfStackCreated": "2025-09-06T09:42:25.719Z",
     "serviceProviderAwsCfStackUpdated": null,
-    "serviceProviderAwsCfStackStatus": null,
-    "serviceProviderAwsCfStackOutputs": null
+    "serviceProviderAwsCfStackStatus": "CREATE_COMPLETE",
+    "serviceProviderAwsCfStackOutputs": [
+      {
+        "OutputKey": "GetKeyLambdaFunctionQualifiedArn",
+        "OutputValue": "arn:aws:lambda:eu-north-1:115851773339:function:mmdb-dev-GetKey:1",
+        "Description": "Current Lambda function version",
+        "ExportName": "sls-mmdb-dev-GetKeyLambdaFunctionQualifiedArn"
+      },
+      {
+        "OutputKey": "GetMoviesLambdaFunctionQualifiedArn",
+        "OutputValue": "arn:aws:lambda:eu-north-1:115851773339:function:mmdb-dev-GetMovies:1",
+        "Description": "Current Lambda function version",
+        "ExportName": "sls-mmdb-dev-GetMoviesLambdaFunctionQualifiedArn"
+      },
+      {
+        "OutputKey": "HttpApiId",
+        "OutputValue": "mqz93nj8ig",
+        "Description": "Id of the HTTP API",
+        "ExportName": "sls-mmdb-dev-HttpApiId"
+      },
+      {
+        "OutputKey": "ServerlessDeploymentBucketName",
+        "OutputValue": "serverless-framework-deployments-eu-north-1-c3c8091d-0b7f",
+        "ExportName": "sls-mmdb-dev-ServerlessDeploymentBucketName"
+      },
+      {
+        "OutputKey": "HttpApiUrl",
+        "OutputValue": "https://mqz93nj8ig.execute-api.eu-north-1.amazonaws.com",
+        "Description": "URL of the HTTP API",
+        "ExportName": "sls-mmdb-dev-HttpApiUrl"
+      }
+    ],
+    "compiledCloudFormationTemplate": {
+      "AWSTemplateFormatVersion": "2010-09-09",
+      "Description": "The AWS CloudFormation template for this Serverless application",
+      "Resources": {
+        "GetKeyLogGroup": {
+          "Type": "AWS::Logs::LogGroup",
+          "Properties": {
+            "LogGroupName": "/aws/lambda/mmdb-dev-GetKey"
+          }
+        },
+        "GetMoviesLogGroup": {
+          "Type": "AWS::Logs::LogGroup",
+          "Properties": {
+            "LogGroupName": "/aws/lambda/mmdb-dev-GetMovies"
+          }
+        },
+        "GetKeyLambdaFunction": {
+          "Type": "AWS::Lambda::Function",
+          "Properties": {
+            "Code": {
+              "S3Bucket": "serverless-framework-deployments-eu-north-1-c3c8091d-0b7f",
+              "S3Key": "serverless/mmdb/dev/1757152762373-2025-09-06T09:59:22.373Z/mmdb.zip"
+            },
+            "Handler": "functions/GetKey/index.handler",
+            "Runtime": "nodejs20.x",
+            "FunctionName": "mmdb-dev-GetKey",
+            "MemorySize": 1024,
+            "Timeout": 6,
+            "Role": "arn:aws:iam::115851773339:role/BasicLambdaRole"
+          },
+          "DependsOn": [
+            "GetKeyLogGroup"
+          ]
+        },
+        "GetMoviesLambdaFunction": {
+          "Type": "AWS::Lambda::Function",
+          "Properties": {
+            "Code": {
+              "S3Bucket": "serverless-framework-deployments-eu-north-1-c3c8091d-0b7f",
+              "S3Key": "serverless/mmdb/dev/1757152762373-2025-09-06T09:59:22.373Z/mmdb.zip"
+            },
+            "Handler": "functions/GetMovies/index.handler",
+            "Runtime": "nodejs20.x",
+            "FunctionName": "mmdb-dev-GetMovies",
+            "MemorySize": 1024,
+            "Timeout": 6,
+            "Role": "arn:aws:iam::115851773339:role/BasicLambdaRole"
+          },
+          "DependsOn": [
+            "GetMoviesLogGroup"
+          ]
+        },
+        "GetKeyLambdaVersionSR7XKua8W22EYWFVbAqzHzIJo4Ez8ZGwrABqaSMmU": {
+          "Type": "AWS::Lambda::Version",
+          "DeletionPolicy": "Retain",
+          "Properties": {
+            "FunctionName": {
+              "Ref": "GetKeyLambdaFunction"
+            },
+            "CodeSha256": "k+48qSWXO2h7jQompvrZUCyAZA1fxw3Zkcx+3TqcB38="
+          }
+        },
+        "GetMoviesLambdaVersion31vBCi16vJXPzXFqgWcFp9Z7U6AHbYdWCD6mRele5w": {
+          "Type": "AWS::Lambda::Version",
+          "DeletionPolicy": "Retain",
+          "Properties": {
+            "FunctionName": {
+              "Ref": "GetMoviesLambdaFunction"
+            },
+            "CodeSha256": "k+48qSWXO2h7jQompvrZUCyAZA1fxw3Zkcx+3TqcB38="
+          }
+        },
+        "HttpApi": {
+          "Type": "AWS::ApiGatewayV2::Api",
+          "Properties": {
+            "Name": "dev-mmdb",
+            "ProtocolType": "HTTP"
+          }
+        },
+        "HttpApiStage": {
+          "Type": "AWS::ApiGatewayV2::Stage",
+          "Properties": {
+            "ApiId": {
+              "Ref": "HttpApi"
+            },
+            "StageName": "$default",
+            "AutoDeploy": true,
+            "DefaultRouteSettings": {
+              "DetailedMetricsEnabled": false
+            }
+          }
+        },
+        "GetKeyLambdaPermissionHttpApi": {
+          "Type": "AWS::Lambda::Permission",
+          "Properties": {
+            "FunctionName": {
+              "Fn::GetAtt": [
+                "GetKeyLambdaFunction",
+                "Arn"
+              ]
+            },
+            "Action": "lambda:InvokeFunction",
+            "Principal": "apigateway.amazonaws.com",
+            "SourceArn": {
+              "Fn::Join": [
+                "",
+                [
+                  "arn:",
+                  {
+                    "Ref": "AWS::Partition"
+                  },
+                  ":execute-api:",
+                  {
+                    "Ref": "AWS::Region"
+                  },
+                  ":",
+                  {
+                    "Ref": "AWS::AccountId"
+                  },
+                  ":",
+                  {
+                    "Ref": "HttpApi"
+                  },
+                  "/*"
+                ]
+              ]
+            }
+          }
+        },
+        "HttpApiIntegrationGetKey": {
+          "Type": "AWS::ApiGatewayV2::Integration",
+          "Properties": {
+            "ApiId": {
+              "Ref": "HttpApi"
+            },
+            "IntegrationType": "AWS_PROXY",
+            "IntegrationUri": {
+              "Fn::GetAtt": [
+                "GetKeyLambdaFunction",
+                "Arn"
+              ]
+            },
+            "PayloadFormatVersion": "2.0",
+            "TimeoutInMillis": 30000
+          }
+        },
+        "HttpApiRouteGetApiKeys": "<REDACTED>",
+        "GetMoviesLambdaPermissionHttpApi": {
+          "Type": "AWS::Lambda::Permission",
+          "Properties": {
+            "FunctionName": {
+              "Fn::GetAtt": [
+                "GetMoviesLambdaFunction",
+                "Arn"
+              ]
+            },
+            "Action": "lambda:InvokeFunction",
+            "Principal": "apigateway.amazonaws.com",
+            "SourceArn": {
+              "Fn::Join": [
+                "",
+                [
+                  "arn:",
+                  {
+                    "Ref": "AWS::Partition"
+                  },
+                  ":execute-api:",
+                  {
+                    "Ref": "AWS::Region"
+                  },
+                  ":",
+                  {
+                    "Ref": "AWS::AccountId"
+                  },
+                  ":",
+                  {
+                    "Ref": "HttpApi"
+                  },
+                  "/*"
+                ]
+              ]
+            }
+          }
+        },
+        "HttpApiIntegrationGetMovies": {
+          "Type": "AWS::ApiGatewayV2::Integration",
+          "Properties": {
+            "ApiId": {
+              "Ref": "HttpApi"
+            },
+            "IntegrationType": "AWS_PROXY",
+            "IntegrationUri": {
+              "Fn::GetAtt": [
+                "GetMoviesLambdaFunction",
+                "Arn"
+              ]
+            },
+            "PayloadFormatVersion": "2.0",
+            "TimeoutInMillis": 30000
+          }
+        },
+        "HttpApiRouteGetApiMovies": {
+          "Type": "AWS::ApiGatewayV2::Route",
+          "Properties": {
+            "ApiId": {
+              "Ref": "HttpApi"
+            },
+            "RouteKey": "GET /api/movies",
+            "Target": {
+              "Fn::Join": [
+                "/",
+                [
+                  "integrations",
+                  {
+                    "Ref": "HttpApiIntegrationGetMovies"
+                  }
+                ]
+              ]
+            }
+          },
+          "DependsOn": "HttpApiIntegrationGetMovies"
+        }
+      },
+      "Outputs": {
+        "ServerlessDeploymentBucketName": {
+          "Value": "serverless-framework-deployments-eu-north-1-c3c8091d-0b7f",
+          "Export": {
+            "Name": "sls-mmdb-dev-ServerlessDeploymentBucketName"
+          }
+        },
+        "GetKeyLambdaFunctionQualifiedArn": {
+          "Description": "Current Lambda function version",
+          "Value": {
+            "Ref": "GetKeyLambdaVersionSR7XKua8W22EYWFVbAqzHzIJo4Ez8ZGwrABqaSMmU"
+          },
+          "Export": {
+            "Name": "sls-mmdb-dev-GetKeyLambdaFunctionQualifiedArn"
+          }
+        },
+        "GetMoviesLambdaFunctionQualifiedArn": {
+          "Description": "Current Lambda function version",
+          "Value": {
+            "Ref": "GetMoviesLambdaVersion31vBCi16vJXPzXFqgWcFp9Z7U6AHbYdWCD6mRele5w"
+          },
+          "Export": {
+            "Name": "sls-mmdb-dev-GetMoviesLambdaFunctionQualifiedArn"
+          }
+        },
+        "HttpApiId": {
+          "Description": "Id of the HTTP API",
+          "Value": {
+            "Ref": "HttpApi"
+          },
+          "Export": {
+            "Name": "sls-mmdb-dev-HttpApiId"
+          }
+        },
+        "HttpApiUrl": {
+          "Description": "URL of the HTTP API",
+          "Value": {
+            "Fn::Join": [
+              "",
+              [
+                "https://",
+                {
+                  "Ref": "HttpApi"
+                },
+                ".execute-api.",
+                {
+                  "Ref": "AWS::Region"
+                },
+                ".",
+                {
+                  "Ref": "AWS::URLSuffix"
+                }
+              ]
+            ]
+          },
+          "Export": {
+            "Name": "sls-mmdb-dev-HttpApiUrl"
+          }
+        }
+      }
+    }
   }
 }

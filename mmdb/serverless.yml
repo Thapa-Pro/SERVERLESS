@@ -6,14 +6,24 @@ service: mmdb
 provider:
   name: aws
   runtime: nodejs20.x
+  region: eu-north-1
+  iam:
+    role: arn:aws:iam::115851773339:role/BasicLambdaRole
   # Uncomment to easily set up a custom domain. Read the docs for more details:
   # https://www.serverless.com/framework/docs/providers/aws/guide/domains
   # domain: api.example.com
 
 functions:
-  hello:
-    handler: handler.hello
+  GetKey:
+    handler: functions/GetKey/index.handler
     events:
       - httpApi:
-          path: /
-          method: get
+          path: /api/keys
+          method: GET
+
+  GetMovies:
+    handler: functions/GetMovies/index.handler
+    events:
+      - httpApi:
+          path: /api/movies
+          method: GET
