@@ -27,3 +27,10 @@ functions:
       - httpApi:
           path: /api/movies
           method: GET
+
+  PostMovie:
+    handler: functions/PostMovie/index.handler
+    events:
+      - httpApi:
+          path: /api/movies
+          method: POST

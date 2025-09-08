@@ -10,6 +10,8 @@
   "license": "ISC",
   "type": "module",
   "dependencies": {
-    "@middy/core": "^6.4.4"
+    "@middy/core": "^6.4.4",
+    "@middy/http-json-body-parser": "^6.4.4",
+    "@middy/validator": "^6.4.4"
   }
 }
