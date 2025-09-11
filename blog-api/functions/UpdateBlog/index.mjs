@@ -6,7 +6,7 @@ export const handler = async (event) => {
   try {
     await db.update({
       TableName: "blog-db",
-      Key: { pk: "jesper", sk: event.pathParameters.id },
+      Key: { pk: "thapa", sk: event.pathParameters.id },
       ReturnValues: "ALL_NEW",
       UpdateExpression: "set content = :content",
       ExpressionAttributeValues: {

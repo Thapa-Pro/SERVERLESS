@@ -54,7 +54,7 @@
               "Properties": {
                 "Code": {
                   "S3Bucket": "serverless-framework-deployments-eu-north-1-c3c8091d-0b7f",
-                  "S3Key": "serverless/blog-api/dev/1757573662719-2025-09-11T06:54:22.719Z/blog-api.zip"
+                  "S3Key": "serverless/blog-api/dev/1757600614482-2025-09-11T14:23:34.482Z/blog-api.zip"
                 },
                 "Handler": "functions/GetBlogs/index.handler",
                 "Runtime": "nodejs20.x",
@@ -72,7 +72,7 @@
               "Properties": {
                 "Code": {
                   "S3Bucket": "serverless-framework-deployments-eu-north-1-c3c8091d-0b7f",
-                  "S3Key": "serverless/blog-api/dev/1757573662719-2025-09-11T06:54:22.719Z/blog-api.zip"
+                  "S3Key": "serverless/blog-api/dev/1757600614482-2025-09-11T14:23:34.482Z/blog-api.zip"
                 },
                 "Handler": "functions/GetBlogsByUser/index.handler",
                 "Runtime": "nodejs20.x",
@@ -90,7 +90,7 @@
               "Properties": {
                 "Code": {
                   "S3Bucket": "serverless-framework-deployments-eu-north-1-c3c8091d-0b7f",
-                  "S3Key": "serverless/blog-api/dev/1757573662719-2025-09-11T06:54:22.719Z/blog-api.zip"
+                  "S3Key": "serverless/blog-api/dev/1757600614482-2025-09-11T14:23:34.482Z/blog-api.zip"
                 },
                 "Handler": "functions/PostBlog/index.handler",
                 "Runtime": "nodejs20.x",
@@ -108,7 +108,7 @@
               "Properties": {
                 "Code": {
                   "S3Bucket": "serverless-framework-deployments-eu-north-1-c3c8091d-0b7f",
-                  "S3Key": "serverless/blog-api/dev/1757573662719-2025-09-11T06:54:22.719Z/blog-api.zip"
+                  "S3Key": "serverless/blog-api/dev/1757600614482-2025-09-11T14:23:34.482Z/blog-api.zip"
                 },
                 "Handler": "functions/UpdateBlog/index.handler",
                 "Runtime": "nodejs20.x",
@@ -126,7 +126,7 @@
               "Properties": {
                 "Code": {
                   "S3Bucket": "serverless-framework-deployments-eu-north-1-c3c8091d-0b7f",
-                  "S3Key": "serverless/blog-api/dev/1757573662719-2025-09-11T06:54:22.719Z/blog-api.zip"
+                  "S3Key": "serverless/blog-api/dev/1757600614482-2025-09-11T14:23:34.482Z/blog-api.zip"
                 },
                 "Handler": "functions/DeleteBlog/index.handler",
                 "Runtime": "nodejs20.x",
@@ -139,54 +139,54 @@
                 "DeleteBlogLogGroup"
               ]
             },
-            "GetBlogsLambdaVersionYmRrK5BWYN2mQEHnqYP0945TqPpN52GICLbEGOAFqw": {
+            "GetBlogsLambdaVersionJzdCKwmqvor8Zu5pPBNMAZdfyMk14JR6TvDXY4c1s": {
               "Type": "AWS::Lambda::Version",
               "DeletionPolicy": "Retain",
               "Properties": {
                 "FunctionName": {
                   "Ref": "GetBlogsLambdaFunction"
                 },
-                "CodeSha256": "sTWWDbM/3jAjIW3qW9b3NETsq4xwn31C7eOxYVKGLgQ="
+                "CodeSha256": "sTFACv1nxwHlkqhTK8OvtyYLDkXsAgANRM1UwBIPO1A="
               }
             },
-            "GetBlogsByUserLambdaVersionHPHqeRU3MiC0dP3dlZ2DkwZlgMlnbaDfG3iGvqDnU": {
+            "GetBlogsByUserLambdaVersion0hYn2qivj1JHcxVZeGNkwvU9QtriRYoDkdY0Allkh2A": {
               "Type": "AWS::Lambda::Version",
               "DeletionPolicy": "Retain",
               "Properties": {
                 "FunctionName": {
                   "Ref": "GetBlogsByUserLambdaFunction"
                 },
-                "CodeSha256": "sTWWDbM/3jAjIW3qW9b3NETsq4xwn31C7eOxYVKGLgQ="
+                "CodeSha256": "sTFACv1nxwHlkqhTK8OvtyYLDkXsAgANRM1UwBIPO1A="
               }
             },
-            "PostBlogLambdaVersionkN0JIhvsEZOlYe5ygUehwlFh2r6JlWqbN69uI9uirI": {
+            "PostBlogLambdaVersionnKdmjT46ILQ35Owe5KBXJ8F0ZNOEK1pJYrqqW7DaBY": {
               "Type": "AWS::Lambda::Version",
               "DeletionPolicy": "Retain",
               "Properties": {
                 "FunctionName": {
                   "Ref": "PostBlogLambdaFunction"
                 },
-                "CodeSha256": "sTWWDbM/3jAjIW3qW9b3NETsq4xwn31C7eOxYVKGLgQ="
+                "CodeSha256": "sTFACv1nxwHlkqhTK8OvtyYLDkXsAgANRM1UwBIPO1A="
               }
             },
-            "UpdateBlogLambdaVersion8pPw610qqQKWHsoKkUrEEgfXNM25oodFjsGkm2IIPM": {
+            "UpdateBlogLambdaVersionXxmEsCKUiFBEvrG1rDxOn6o4PZAYal5bTaPa2iehE": {
               "Type": "AWS::Lambda::Version",
               "DeletionPolicy": "Retain",
               "Properties": {
                 "FunctionName": {
                   "Ref": "UpdateBlogLambdaFunction"
                 },
-                "CodeSha256": "sTWWDbM/3jAjIW3qW9b3NETsq4xwn31C7eOxYVKGLgQ="
+                "CodeSha256": "sTFACv1nxwHlkqhTK8OvtyYLDkXsAgANRM1UwBIPO1A="
               }
             },
-            "DeleteBlogLambdaVersioneNZp5mO2yeJU4N20fZPC0ARmQpcttEDnVZVJMR8": {
+            "DeleteBlogLambdaVersionX3GXhwvNTniVU3QPNi2eh2PjmurrCy11XtXenclXds": {
               "Type": "AWS::Lambda::Version",
               "DeletionPolicy": "Retain",
               "Properties": {
                 "FunctionName": {
                   "Ref": "DeleteBlogLambdaFunction"
                 },
-                "CodeSha256": "sTWWDbM/3jAjIW3qW9b3NETsq4xwn31C7eOxYVKGLgQ="
+                "CodeSha256": "sTFACv1nxwHlkqhTK8OvtyYLDkXsAgANRM1UwBIPO1A="
               }
             },
             "HttpApi": {
@@ -622,7 +622,7 @@
             "GetBlogsLambdaFunctionQualifiedArn": {
               "Description": "Current Lambda function version",
               "Value": {
-                "Ref": "GetBlogsLambdaVersionYmRrK5BWYN2mQEHnqYP0945TqPpN52GICLbEGOAFqw"
+                "Ref": "GetBlogsLambdaVersionJzdCKwmqvor8Zu5pPBNMAZdfyMk14JR6TvDXY4c1s"
               },
               "Export": {
                 "Name": "sls-blog-api-dev-GetBlogsLambdaFunctionQualifiedArn"
@@ -631,7 +631,7 @@
             "GetBlogsByUserLambdaFunctionQualifiedArn": {
               "Description": "Current Lambda function version",
               "Value": {
-                "Ref": "GetBlogsByUserLambdaVersionHPHqeRU3MiC0dP3dlZ2DkwZlgMlnbaDfG3iGvqDnU"
+                "Ref": "GetBlogsByUserLambdaVersion0hYn2qivj1JHcxVZeGNkwvU9QtriRYoDkdY0Allkh2A"
               },
               "Export": {
                 "Name": "sls-blog-api-dev-GetBlogsByUserLambdaFunctionQualifiedArn"
@@ -640,7 +640,7 @@
             "PostBlogLambdaFunctionQualifiedArn": {
               "Description": "Current Lambda function version",
               "Value": {
-                "Ref": "PostBlogLambdaVersionkN0JIhvsEZOlYe5ygUehwlFh2r6JlWqbN69uI9uirI"
+                "Ref": "PostBlogLambdaVersionnKdmjT46ILQ35Owe5KBXJ8F0ZNOEK1pJYrqqW7DaBY"
               },
               "Export": {
                 "Name": "sls-blog-api-dev-PostBlogLambdaFunctionQualifiedArn"
@@ -649,7 +649,7 @@
             "UpdateBlogLambdaFunctionQualifiedArn": {
               "Description": "Current Lambda function version",
               "Value": {
-                "Ref": "UpdateBlogLambdaVersion8pPw610qqQKWHsoKkUrEEgfXNM25oodFjsGkm2IIPM"
+                "Ref": "UpdateBlogLambdaVersionXxmEsCKUiFBEvrG1rDxOn6o4PZAYal5bTaPa2iehE"
               },
               "Export": {
                 "Name": "sls-blog-api-dev-UpdateBlogLambdaFunctionQualifiedArn"
@@ -658,7 +658,7 @@
             "DeleteBlogLambdaFunctionQualifiedArn": {
               "Description": "Current Lambda function version",
               "Value": {
-                "Ref": "DeleteBlogLambdaVersioneNZp5mO2yeJU4N20fZPC0ARmQpcttEDnVZVJMR8"
+                "Ref": "DeleteBlogLambdaVersionX3GXhwvNTniVU3QPNi2eh2PjmurrCy11XtXenclXds"
               },
               "Export": {
                 "Name": "sls-blog-api-dev-DeleteBlogLambdaFunctionQualifiedArn"
@@ -721,7 +721,7 @@
           "timeout": 6,
           "runtime": "nodejs20.x",
           "vpc": {},
-          "versionLogicalId": "GetBlogsLambdaVersionYmRrK5BWYN2mQEHnqYP0945TqPpN52GICLbEGOAFqw"
+          "versionLogicalId": "GetBlogsLambdaVersionJzdCKwmqvor8Zu5pPBNMAZdfyMk14JR6TvDXY4c1s"
         },
         "GetBlogsByUser": {
           "handler": "functions/GetBlogsByUser/index.handler",
@@ -741,7 +741,7 @@
           "timeout": 6,
           "runtime": "nodejs20.x",
           "vpc": {},
-          "versionLogicalId": "GetBlogsByUserLambdaVersionHPHqeRU3MiC0dP3dlZ2DkwZlgMlnbaDfG3iGvqDnU"
+          "versionLogicalId": "GetBlogsByUserLambdaVersion0hYn2qivj1JHcxVZeGNkwvU9QtriRYoDkdY0Allkh2A"
         },
         "PostBlog": {
           "handler": "functions/PostBlog/index.handler",
@@ -761,7 +761,7 @@
           "timeout": 6,
           "runtime": "nodejs20.x",
           "vpc": {},
-          "versionLogicalId": "PostBlogLambdaVersionkN0JIhvsEZOlYe5ygUehwlFh2r6JlWqbN69uI9uirI"
+          "versionLogicalId": "PostBlogLambdaVersionnKdmjT46ILQ35Owe5KBXJ8F0ZNOEK1pJYrqqW7DaBY"
         },
         "UpdateBlog": {
           "handler": "functions/UpdateBlog/index.handler",
@@ -781,7 +781,7 @@
           "timeout": 6,
           "runtime": "nodejs20.x",
           "vpc": {},
-          "versionLogicalId": "UpdateBlogLambdaVersion8pPw610qqQKWHsoKkUrEEgfXNM25oodFjsGkm2IIPM"
+          "versionLogicalId": "UpdateBlogLambdaVersionXxmEsCKUiFBEvrG1rDxOn6o4PZAYal5bTaPa2iehE"
         },
         "DeleteBlog": {
           "handler": "functions/DeleteBlog/index.handler",
@@ -801,7 +801,7 @@
           "timeout": 6,
           "runtime": "nodejs20.x",
           "vpc": {},
-          "versionLogicalId": "DeleteBlogLambdaVersioneNZp5mO2yeJU4N20fZPC0ARmQpcttEDnVZVJMR8"
+          "versionLogicalId": "DeleteBlogLambdaVersionX3GXhwvNTniVU3QPNi2eh2PjmurrCy11XtXenclXds"
         }
       },
       "resources": {
@@ -885,7 +885,7 @@
             "Properties": {
               "Code": {
                 "S3Bucket": "serverless-framework-deployments-eu-north-1-c3c8091d-0b7f",
-                "S3Key": "serverless/blog-api/dev/1757573662719-2025-09-11T06:54:22.719Z/blog-api.zip"
+                "S3Key": "serverless/blog-api/dev/1757600614482-2025-09-11T14:23:34.482Z/blog-api.zip"
               },
               "Handler": "functions/GetBlogs/index.handler",
               "Runtime": "nodejs20.x",
@@ -903,7 +903,7 @@
             "Properties": {
               "Code": {
                 "S3Bucket": "serverless-framework-deployments-eu-north-1-c3c8091d-0b7f",
-                "S3Key": "serverless/blog-api/dev/1757573662719-2025-09-11T06:54:22.719Z/blog-api.zip"
+                "S3Key": "serverless/blog-api/dev/1757600614482-2025-09-11T14:23:34.482Z/blog-api.zip"
               },
               "Handler": "functions/GetBlogsByUser/index.handler",
               "Runtime": "nodejs20.x",
@@ -921,7 +921,7 @@
             "Properties": {
               "Code": {
                 "S3Bucket": "serverless-framework-deployments-eu-north-1-c3c8091d-0b7f",
-                "S3Key": "serverless/blog-api/dev/1757573662719-2025-09-11T06:54:22.719Z/blog-api.zip"
+                "S3Key": "serverless/blog-api/dev/1757600614482-2025-09-11T14:23:34.482Z/blog-api.zip"
               },
               "Handler": "functions/PostBlog/index.handler",
               "Runtime": "nodejs20.x",
@@ -939,7 +939,7 @@
             "Properties": {
               "Code": {
                 "S3Bucket": "serverless-framework-deployments-eu-north-1-c3c8091d-0b7f",
-                "S3Key": "serverless/blog-api/dev/1757573662719-2025-09-11T06:54:22.719Z/blog-api.zip"
+                "S3Key": "serverless/blog-api/dev/1757600614482-2025-09-11T14:23:34.482Z/blog-api.zip"
               },
               "Handler": "functions/UpdateBlog/index.handler",
               "Runtime": "nodejs20.x",
@@ -957,7 +957,7 @@
             "Properties": {
               "Code": {
                 "S3Bucket": "serverless-framework-deployments-eu-north-1-c3c8091d-0b7f",
-                "S3Key": "serverless/blog-api/dev/1757573662719-2025-09-11T06:54:22.719Z/blog-api.zip"
+                "S3Key": "serverless/blog-api/dev/1757600614482-2025-09-11T14:23:34.482Z/blog-api.zip"
               },
               "Handler": "functions/DeleteBlog/index.handler",
               "Runtime": "nodejs20.x",
@@ -970,54 +970,54 @@
               "DeleteBlogLogGroup"
             ]
           },
-          "GetBlogsLambdaVersionYmRrK5BWYN2mQEHnqYP0945TqPpN52GICLbEGOAFqw": {
+          "GetBlogsLambdaVersionJzdCKwmqvor8Zu5pPBNMAZdfyMk14JR6TvDXY4c1s": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "GetBlogsLambdaFunction"
               },
-              "CodeSha256": "sTWWDbM/3jAjIW3qW9b3NETsq4xwn31C7eOxYVKGLgQ="
+              "CodeSha256": "sTFACv1nxwHlkqhTK8OvtyYLDkXsAgANRM1UwBIPO1A="
             }
           },
-          "GetBlogsByUserLambdaVersionHPHqeRU3MiC0dP3dlZ2DkwZlgMlnbaDfG3iGvqDnU": {
+          "GetBlogsByUserLambdaVersion0hYn2qivj1JHcxVZeGNkwvU9QtriRYoDkdY0Allkh2A": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "GetBlogsByUserLambdaFunction"
               },
-              "CodeSha256": "sTWWDbM/3jAjIW3qW9b3NETsq4xwn31C7eOxYVKGLgQ="
+              "CodeSha256": "sTFACv1nxwHlkqhTK8OvtyYLDkXsAgANRM1UwBIPO1A="
             }
           },
-          "PostBlogLambdaVersionkN0JIhvsEZOlYe5ygUehwlFh2r6JlWqbN69uI9uirI": {
+          "PostBlogLambdaVersionnKdmjT46ILQ35Owe5KBXJ8F0ZNOEK1pJYrqqW7DaBY": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "PostBlogLambdaFunction"
               },
-              "CodeSha256": "sTWWDbM/3jAjIW3qW9b3NETsq4xwn31C7eOxYVKGLgQ="
+              "CodeSha256": "sTFACv1nxwHlkqhTK8OvtyYLDkXsAgANRM1UwBIPO1A="
             }
           },
-          "UpdateBlogLambdaVersion8pPw610qqQKWHsoKkUrEEgfXNM25oodFjsGkm2IIPM": {
+          "UpdateBlogLambdaVersionXxmEsCKUiFBEvrG1rDxOn6o4PZAYal5bTaPa2iehE": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "UpdateBlogLambdaFunction"
               },
-              "CodeSha256": "sTWWDbM/3jAjIW3qW9b3NETsq4xwn31C7eOxYVKGLgQ="
+              "CodeSha256": "sTFACv1nxwHlkqhTK8OvtyYLDkXsAgANRM1UwBIPO1A="
             }
           },
-          "DeleteBlogLambdaVersioneNZp5mO2yeJU4N20fZPC0ARmQpcttEDnVZVJMR8": {
+          "DeleteBlogLambdaVersionX3GXhwvNTniVU3QPNi2eh2PjmurrCy11XtXenclXds": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "DeleteBlogLambdaFunction"
               },
-              "CodeSha256": "sTWWDbM/3jAjIW3qW9b3NETsq4xwn31C7eOxYVKGLgQ="
+              "CodeSha256": "sTFACv1nxwHlkqhTK8OvtyYLDkXsAgANRM1UwBIPO1A="
             }
           },
           "HttpApi": {
@@ -1453,7 +1453,7 @@
           "GetBlogsLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "GetBlogsLambdaVersionYmRrK5BWYN2mQEHnqYP0945TqPpN52GICLbEGOAFqw"
+              "Ref": "GetBlogsLambdaVersionJzdCKwmqvor8Zu5pPBNMAZdfyMk14JR6TvDXY4c1s"
             },
             "Export": {
               "Name": "sls-blog-api-dev-GetBlogsLambdaFunctionQualifiedArn"
@@ -1462,7 +1462,7 @@
           "GetBlogsByUserLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "GetBlogsByUserLambdaVersionHPHqeRU3MiC0dP3dlZ2DkwZlgMlnbaDfG3iGvqDnU"
+              "Ref": "GetBlogsByUserLambdaVersion0hYn2qivj1JHcxVZeGNkwvU9QtriRYoDkdY0Allkh2A"
             },
             "Export": {
               "Name": "sls-blog-api-dev-GetBlogsByUserLambdaFunctionQualifiedArn"
@@ -1471,7 +1471,7 @@
           "PostBlogLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "PostBlogLambdaVersionkN0JIhvsEZOlYe5ygUehwlFh2r6JlWqbN69uI9uirI"
+              "Ref": "PostBlogLambdaVersionnKdmjT46ILQ35Owe5KBXJ8F0ZNOEK1pJYrqqW7DaBY"
             },
             "Export": {
               "Name": "sls-blog-api-dev-PostBlogLambdaFunctionQualifiedArn"
@@ -1480,7 +1480,7 @@
           "UpdateBlogLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "UpdateBlogLambdaVersion8pPw610qqQKWHsoKkUrEEgfXNM25oodFjsGkm2IIPM"
+              "Ref": "UpdateBlogLambdaVersionXxmEsCKUiFBEvrG1rDxOn6o4PZAYal5bTaPa2iehE"
             },
             "Export": {
               "Name": "sls-blog-api-dev-UpdateBlogLambdaFunctionQualifiedArn"
@@ -1489,7 +1489,7 @@
           "DeleteBlogLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "DeleteBlogLambdaVersioneNZp5mO2yeJU4N20fZPC0ARmQpcttEDnVZVJMR8"
+              "Ref": "DeleteBlogLambdaVersionX3GXhwvNTniVU3QPNi2eh2PjmurrCy11XtXenclXds"
             },
             "Export": {
               "Name": "sls-blog-api-dev-DeleteBlogLambdaFunctionQualifiedArn"
@@ -1555,18 +1555,18 @@
     "serviceProviderAwsCfStackName": "blog-api-dev",
     "serviceProviderAwsCfStackId": "arn:aws:cloudformation:eu-north-1:115851773339:stack/blog-api-dev/2716a470-8edc-11f0-a198-0e11e35f6c2f",
     "serviceProviderAwsCfStackCreated": "2025-09-11T06:54:24.946Z",
-    "serviceProviderAwsCfStackUpdated": null,
-    "serviceProviderAwsCfStackStatus": "CREATE_COMPLETE",
+    "serviceProviderAwsCfStackUpdated": "2025-09-11T13:42:54.377Z",
+    "serviceProviderAwsCfStackStatus": "UPDATE_COMPLETE",
     "serviceProviderAwsCfStackOutputs": [
       {
         "OutputKey": "UpdateBlogLambdaFunctionQualifiedArn",
-        "OutputValue": "arn:aws:lambda:eu-north-1:115851773339:function:blog-api-dev-UpdateBlog:1",
+        "OutputValue": "arn:aws:lambda:eu-north-1:115851773339:function:blog-api-dev-UpdateBlog:2",
         "Description": "Current Lambda function version",
         "ExportName": "sls-blog-api-dev-UpdateBlogLambdaFunctionQualifiedArn"
       },
       {
         "OutputKey": "DeleteBlogLambdaFunctionQualifiedArn",
-        "OutputValue": "arn:aws:lambda:eu-north-1:115851773339:function:blog-api-dev-DeleteBlog:1",
+        "OutputValue": "arn:aws:lambda:eu-north-1:115851773339:function:blog-api-dev-DeleteBlog:2",
         "Description": "Current Lambda function version",
         "ExportName": "sls-blog-api-dev-DeleteBlogLambdaFunctionQualifiedArn"
       },
@@ -1578,19 +1578,19 @@
       },
       {
         "OutputKey": "PostBlogLambdaFunctionQualifiedArn",
-        "OutputValue": "arn:aws:lambda:eu-north-1:115851773339:function:blog-api-dev-PostBlog:1",
+        "OutputValue": "arn:aws:lambda:eu-north-1:115851773339:function:blog-api-dev-PostBlog:2",
         "Description": "Current Lambda function version",
         "ExportName": "sls-blog-api-dev-PostBlogLambdaFunctionQualifiedArn"
       },
       {
         "OutputKey": "GetBlogsLambdaFunctionQualifiedArn",
-        "OutputValue": "arn:aws:lambda:eu-north-1:115851773339:function:blog-api-dev-GetBlogs:1",
+        "OutputValue": "arn:aws:lambda:eu-north-1:115851773339:function:blog-api-dev-GetBlogs:2",
         "Description": "Current Lambda function version",
         "ExportName": "sls-blog-api-dev-GetBlogsLambdaFunctionQualifiedArn"
       },
       {
         "OutputKey": "GetBlogsByUserLambdaFunctionQualifiedArn",
-        "OutputValue": "arn:aws:lambda:eu-north-1:115851773339:function:blog-api-dev-GetBlogsByUser:1",
+        "OutputValue": "arn:aws:lambda:eu-north-1:115851773339:function:blog-api-dev-GetBlogsByUser:2",
         "Description": "Current Lambda function version",
         "ExportName": "sls-blog-api-dev-GetBlogsByUserLambdaFunctionQualifiedArn"
       },
@@ -1645,7 +1645,7 @@
           "Properties": {
             "Code": {
               "S3Bucket": "serverless-framework-deployments-eu-north-1-c3c8091d-0b7f",
-              "S3Key": "serverless/blog-api/dev/1757573662719-2025-09-11T06:54:22.719Z/blog-api.zip"
+              "S3Key": "serverless/blog-api/dev/1757600614482-2025-09-11T14:23:34.482Z/blog-api.zip"
             },
             "Handler": "functions/GetBlogs/index.handler",
             "Runtime": "nodejs20.x",
@@ -1663,7 +1663,7 @@
           "Properties": {
             "Code": {
               "S3Bucket": "serverless-framework-deployments-eu-north-1-c3c8091d-0b7f",
-              "S3Key": "serverless/blog-api/dev/1757573662719-2025-09-11T06:54:22.719Z/blog-api.zip"
+              "S3Key": "serverless/blog-api/dev/1757600614482-2025-09-11T14:23:34.482Z/blog-api.zip"
             },
             "Handler": "functions/GetBlogsByUser/index.handler",
             "Runtime": "nodejs20.x",
@@ -1681,7 +1681,7 @@
           "Properties": {
             "Code": {
               "S3Bucket": "serverless-framework-deployments-eu-north-1-c3c8091d-0b7f",
-              "S3Key": "serverless/blog-api/dev/1757573662719-2025-09-11T06:54:22.719Z/blog-api.zip"
+              "S3Key": "serverless/blog-api/dev/1757600614482-2025-09-11T14:23:34.482Z/blog-api.zip"
             },
             "Handler": "functions/PostBlog/index.handler",
             "Runtime": "nodejs20.x",
@@ -1699,7 +1699,7 @@
           "Properties": {
             "Code": {
               "S3Bucket": "serverless-framework-deployments-eu-north-1-c3c8091d-0b7f",
-              "S3Key": "serverless/blog-api/dev/1757573662719-2025-09-11T06:54:22.719Z/blog-api.zip"
+              "S3Key": "serverless/blog-api/dev/1757600614482-2025-09-11T14:23:34.482Z/blog-api.zip"
             },
             "Handler": "functions/UpdateBlog/index.handler",
             "Runtime": "nodejs20.x",
@@ -1717,7 +1717,7 @@
           "Properties": {
             "Code": {
               "S3Bucket": "serverless-framework-deployments-eu-north-1-c3c8091d-0b7f",
-              "S3Key": "serverless/blog-api/dev/1757573662719-2025-09-11T06:54:22.719Z/blog-api.zip"
+              "S3Key": "serverless/blog-api/dev/1757600614482-2025-09-11T14:23:34.482Z/blog-api.zip"
             },
             "Handler": "functions/DeleteBlog/index.handler",
             "Runtime": "nodejs20.x",
@@ -1730,54 +1730,54 @@
             "DeleteBlogLogGroup"
           ]
         },
-        "GetBlogsLambdaVersionYmRrK5BWYN2mQEHnqYP0945TqPpN52GICLbEGOAFqw": {
+        "GetBlogsLambdaVersionJzdCKwmqvor8Zu5pPBNMAZdfyMk14JR6TvDXY4c1s": {
           "Type": "AWS::Lambda::Version",
           "DeletionPolicy": "Retain",
           "Properties": {
             "FunctionName": {
               "Ref": "GetBlogsLambdaFunction"
             },
-            "CodeSha256": "sTWWDbM/3jAjIW3qW9b3NETsq4xwn31C7eOxYVKGLgQ="
+            "CodeSha256": "sTFACv1nxwHlkqhTK8OvtyYLDkXsAgANRM1UwBIPO1A="
           }
         },
-        "GetBlogsByUserLambdaVersionHPHqeRU3MiC0dP3dlZ2DkwZlgMlnbaDfG3iGvqDnU": {
+        "GetBlogsByUserLambdaVersion0hYn2qivj1JHcxVZeGNkwvU9QtriRYoDkdY0Allkh2A": {
           "Type": "AWS::Lambda::Version",
           "DeletionPolicy": "Retain",
           "Properties": {
             "FunctionName": {
               "Ref": "GetBlogsByUserLambdaFunction"
             },
-            "CodeSha256": "sTWWDbM/3jAjIW3qW9b3NETsq4xwn31C7eOxYVKGLgQ="
+            "CodeSha256": "sTFACv1nxwHlkqhTK8OvtyYLDkXsAgANRM1UwBIPO1A="
           }
         },
-        "PostBlogLambdaVersionkN0JIhvsEZOlYe5ygUehwlFh2r6JlWqbN69uI9uirI": {
+        "PostBlogLambdaVersionnKdmjT46ILQ35Owe5KBXJ8F0ZNOEK1pJYrqqW7DaBY": {
           "Type": "AWS::Lambda::Version",
           "DeletionPolicy": "Retain",
           "Properties": {
             "FunctionName": {
               "Ref": "PostBlogLambdaFunction"
             },
-            "CodeSha256": "sTWWDbM/3jAjIW3qW9b3NETsq4xwn31C7eOxYVKGLgQ="
+            "CodeSha256": "sTFACv1nxwHlkqhTK8OvtyYLDkXsAgANRM1UwBIPO1A="
           }
         },
-        "UpdateBlogLambdaVersion8pPw610qqQKWHsoKkUrEEgfXNM25oodFjsGkm2IIPM": {
+        "UpdateBlogLambdaVersionXxmEsCKUiFBEvrG1rDxOn6o4PZAYal5bTaPa2iehE": {
           "Type": "AWS::Lambda::Version",
           "DeletionPolicy": "Retain",
           "Properties": {
             "FunctionName": {
               "Ref": "UpdateBlogLambdaFunction"
             },
-            "CodeSha256": "sTWWDbM/3jAjIW3qW9b3NETsq4xwn31C7eOxYVKGLgQ="
+            "CodeSha256": "sTFACv1nxwHlkqhTK8OvtyYLDkXsAgANRM1UwBIPO1A="
           }
         },
-        "DeleteBlogLambdaVersioneNZp5mO2yeJU4N20fZPC0ARmQpcttEDnVZVJMR8": {
+        "DeleteBlogLambdaVersionX3GXhwvNTniVU3QPNi2eh2PjmurrCy11XtXenclXds": {
           "Type": "AWS::Lambda::Version",
           "DeletionPolicy": "Retain",
           "Properties": {
             "FunctionName": {
               "Ref": "DeleteBlogLambdaFunction"
             },
-            "CodeSha256": "sTWWDbM/3jAjIW3qW9b3NETsq4xwn31C7eOxYVKGLgQ="
+            "CodeSha256": "sTFACv1nxwHlkqhTK8OvtyYLDkXsAgANRM1UwBIPO1A="
           }
         },
         "HttpApi": {
@@ -2213,7 +2213,7 @@
         "GetBlogsLambdaFunctionQualifiedArn": {
           "Description": "Current Lambda function version",
           "Value": {
-            "Ref": "GetBlogsLambdaVersionYmRrK5BWYN2mQEHnqYP0945TqPpN52GICLbEGOAFqw"
+            "Ref": "GetBlogsLambdaVersionJzdCKwmqvor8Zu5pPBNMAZdfyMk14JR6TvDXY4c1s"
           },
           "Export": {
             "Name": "sls-blog-api-dev-GetBlogsLambdaFunctionQualifiedArn"
@@ -2222,7 +2222,7 @@
         "GetBlogsByUserLambdaFunctionQualifiedArn": {
           "Description": "Current Lambda function version",
           "Value": {
-            "Ref": "GetBlogsByUserLambdaVersionHPHqeRU3MiC0dP3dlZ2DkwZlgMlnbaDfG3iGvqDnU"
+            "Ref": "GetBlogsByUserLambdaVersion0hYn2qivj1JHcxVZeGNkwvU9QtriRYoDkdY0Allkh2A"
           },
           "Export": {
             "Name": "sls-blog-api-dev-GetBlogsByUserLambdaFunctionQualifiedArn"
@@ -2231,7 +2231,7 @@
         "PostBlogLambdaFunctionQualifiedArn": {
           "Description": "Current Lambda function version",
           "Value": {
-            "Ref": "PostBlogLambdaVersionkN0JIhvsEZOlYe5ygUehwlFh2r6JlWqbN69uI9uirI"
+            "Ref": "PostBlogLambdaVersionnKdmjT46ILQ35Owe5KBXJ8F0ZNOEK1pJYrqqW7DaBY"
           },
           "Export": {
             "Name": "sls-blog-api-dev-PostBlogLambdaFunctionQualifiedArn"
@@ -2240,7 +2240,7 @@
         "UpdateBlogLambdaFunctionQualifiedArn": {
           "Description": "Current Lambda function version",
           "Value": {
-            "Ref": "UpdateBlogLambdaVersion8pPw610qqQKWHsoKkUrEEgfXNM25oodFjsGkm2IIPM"
+            "Ref": "UpdateBlogLambdaVersionXxmEsCKUiFBEvrG1rDxOn6o4PZAYal5bTaPa2iehE"
           },
           "Export": {
             "Name": "sls-blog-api-dev-UpdateBlogLambdaFunctionQualifiedArn"
@@ -2249,7 +2249,7 @@
         "DeleteBlogLambdaFunctionQualifiedArn": {
           "Description": "Current Lambda function version",
           "Value": {
-            "Ref": "DeleteBlogLambdaVersioneNZp5mO2yeJU4N20fZPC0ARmQpcttEDnVZVJMR8"
+            "Ref": "DeleteBlogLambdaVersionX3GXhwvNTniVU3QPNi2eh2PjmurrCy11XtXenclXds"
           },
           "Export": {
             "Name": "sls-blog-api-dev-DeleteBlogLambdaFunctionQualifiedArn"

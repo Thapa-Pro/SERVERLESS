@@ -1,0 +1,4 @@
+# aws:
+# org: frontend2024thapa
+# role: arn:aws:iam::115851773339:role/BasicLambdaRole
+# service: mmdb   somthing like this next week
