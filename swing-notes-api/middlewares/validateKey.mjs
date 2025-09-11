@@ -1,0 +1,14 @@
+import { keys } from "../data/keys.mjs";
+
+export const validateKey = () => ({
+  before: (handler) => {
+    const headerKey =
+      handler.event.headers?.["x-api-key"] ||
+      handler.event.headers?.["X-API-Key"] ||
+      handler.event.queryStringParameters?.key;
+
+    if (!headerKey || !keys.includes(headerKey)) {
+      throw new Error("Invalid API Key");
+    }
+  },
+});
