@@ -16,17 +16,17 @@ const eventSchema = transpileSchema({
 });
 
 export const handler = middy(async (event) => {
-  const { user } = event.pathParameters;
+  const { username } = event.pathParameters;
   const { title, text } = event.body;
 
   const id = uuid().slice(0, 8);
   const now = new Date().toISOString();
 
   const item = {
-    pk: user,
+    pk: username,
     sk: `note-${id}`,
     id,
-    user,
+    username, // <-- store username field
     title,
     text,
     createdAt: now,

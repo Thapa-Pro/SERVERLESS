@@ -5,15 +5,24 @@ import { validateKey } from "../../middlewares/validateKey.mjs";
 import { errorHandler } from "../../middlewares/errorHandler.mjs";
 
 export const handler = middy(async (event) => {
-  const { user, id } = event.pathParameters;
+  const { id } = event.pathParameters;
 
-  const res = await db.delete({
+  // Find by id via GSI
+  const q = await db.query({
     TableName: TABLE,
-    Key: { pk: user, sk: `note-${id}` },
-    ReturnValues: "ALL_OLD",
+    IndexName: "GSI1",
+    KeyConditionExpression: "id = :id",
+    ExpressionAttributeValues: { ":id": id },
+    Limit: 1,
+  });
+  const found = q.Items?.[0];
+  if (!found) throw new Error("Note not found");
+
+  await db.delete({
+    TableName: TABLE,
+    Key: { pk: found.pk, sk: found.sk },
   });
 
-  if (!res.Attributes) throw new Error("Note not found");
   return sendResponse(200, { message: "Deleted", id });
 })
   .use(validateKey())

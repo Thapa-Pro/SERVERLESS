@@ -19,28 +19,28 @@ functions:
     handler: functions/GetNotes/index.handler
     events:
       - httpApi:
-          path: /api/notes/{user}
+          path: /api/notes/{username}
           method: GET
 
   CreateNote:
     handler: functions/CreateNote/index.handler
     events:
       - httpApi:
-          path: /api/notes/{user}
+          path: /api/notes/{username}
           method: POST
 
   UpdateNote:
     handler: functions/UpdateNote/index.handler
     events:
       - httpApi:
-          path: /api/notes/{user}/{id}
+          path: /api/notes/{id}
           method: PUT
 
   DeleteNote:
     handler: functions/DeleteNote/index.handler
     events:
       - httpApi:
-          path: /api/notes/{user}/{id}
+          path: /api/notes/{id}
           method: DELETE
 
 resources:
@@ -54,9 +54,18 @@ resources:
             AttributeType: "S"
           - AttributeName: "sk"
             AttributeType: "S"
+          - AttributeName: "id"
+            AttributeType: "S"
         KeySchema:
           - AttributeName: "pk"
             KeyType: "HASH"
           - AttributeName: "sk"
             KeyType: "RANGE"
+        GlobalSecondaryIndexes:
+          - IndexName: GSI1
+            KeySchema:
+              - AttributeName: id
+                KeyType: HASH
+            Projection:
+              ProjectionType: ALL
         BillingMode: PAY_PER_REQUEST

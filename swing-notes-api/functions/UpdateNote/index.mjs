@@ -15,9 +15,21 @@ const eventSchema = transpileSchema({
 });
 
 export const handler = middy(async (event) => {
-  const { user, id } = event.pathParameters;
+  const { id } = event.pathParameters;
+
+  // Find the item by id via GSI
+  const q = await db.query({
+    TableName: TABLE,
+    IndexName: "GSI1",
+    KeyConditionExpression: "id = :id",
+    ExpressionAttributeValues: { ":id": id },
+    Limit: 1,
+  });
+  const found = q.Items?.[0];
+  if (!found) throw new Error("Note not found");
 
   const { title, text } = event.body;
+
   const names = {};
   const values = { ":modifiedAt": new Date().toISOString() };
   const sets = ["modifiedAt = :modifiedAt"];
@@ -33,22 +45,16 @@ export const handler = middy(async (event) => {
     sets.push("#text = :text");
   }
 
-  try {
-    const out = await db.update({
-      TableName: TABLE,
-      Key: { pk: user, sk: `note-${id}` },
-      UpdateExpression: "SET " + sets.join(", "),
-      ExpressionAttributeNames: names,
-      ExpressionAttributeValues: values,
-      ConditionExpression: "attribute_exists(pk) AND attribute_exists(sk)", // don't upsert
-      ReturnValues: "ALL_NEW",
-    });
-    return sendResponse(200, { note: out.Attributes });
-  } catch (e) {
-    if (e.name === "ConditionalCheckFailedException")
-      throw new Error("Note not found");
-    throw e;
-  }
+  const out = await db.update({
+    TableName: TABLE,
+    Key: { pk: found.pk, sk: found.sk },
+    UpdateExpression: "SET " + sets.join(", "),
+    ExpressionAttributeNames: names,
+    ExpressionAttributeValues: values,
+    ReturnValues: "ALL_NEW",
+  });
+
+  return sendResponse(200, { note: out.Attributes });
 })
   .use(validateKey())
   .use(httpJsonBodyParser())
