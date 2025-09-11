@@ -1,60 +1,24 @@
-# top10Books
-✅ Steps Done Here:
+# SERVERLESS Repo
 
-Project Setup
+This repository contains multiple **Serverless Framework** projects that I use for practice and learning.  
+Each project has its own functions, endpoints, and documentation.
 
-Created project folder with serverless.yml, functions/, data/, responses/.
+## Projects in this repo
 
-Installed Serverless Framework.
+- [MMDB](./mmdb/README.md)  
+  A simple movie database API. Supports adding and retrieving movies with validation using Middy.
 
-Configured AWS role (BasicLambdaRole4BookAPI) with correct permissions.
+- [Top10Books](./top10Books/README.md)  
+  A book API that returns a list of top 10 books with details such as title, author, and year.
 
-Data Layer
+---
 
-data/index.mjs → holds the in-memory array of books (id, title, author, year, genre).
+## How to use
 
-Helper for Responses
+Each project can be deployed separately.  
+Go into the project folder and follow its README for setup:
 
-responses/index.mjs → has sendResponse(status, data) function.
-
-This ensures all functions return same format (statusCode, body).
-
-Implemented Lambda Functions
-
-GetBooks → returns the entire book list.
-
-GetBookById → fetches a single book by id.
-
-PostBook → adds a new book (reads JSON body, pushes into array).
-
-DeleteBook → removes a book by id.
-
-Connected via Serverless Framework
-
-serverless.yml maps each function to API Gateway route:
-
-GET /api/books → GetBooks
-
-GET /api/books/{id} → GetBookById
-
-POST /api/books → PostBook
-
-DELETE /api/books/{id} → DeleteBook
-
-Deployment
-
-Ran serverless deploy successfully → created Lambda functions and API Gateway automatically in AWS.
-
-Testing with Insomnia
-
-Verified all endpoints:
-
-List books
-
-Get by ID
-
-Add new book
-
-Delete book
-
-Responses returned in consistent JSON format.
+```bash
+cd mmdb
+# or
+cd top10Books
