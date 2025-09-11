@@ -1,12 +1,2295 @@
 {
-  "unknown": {
+  "C:\\Users\\bachc\\OneDrive\\Desktop\\Serverless\\SERVERLESS ++\\blog-api\\serverless.yml": {
     "versionFramework": "4.18.2",
-    "command": [],
+    "servicePath": "C:\\Users\\bachc\\OneDrive\\Desktop\\Serverless\\SERVERLESS ++\\blog-api\\serverless.yml",
+    "serviceConfigFileName": "serverless.yml",
+    "service": {
+      "org": "frontend2024thapa",
+      "service": "blog-api",
+      "provider": {
+        "name": "aws",
+        "runtime": "nodejs20.x",
+        "region": "eu-north-1",
+        "iam": {
+          "role": "arn:aws:iam::115851773339:role/BasicLambdaRole"
+        },
+        "stage": "dev",
+        "versionFunctions": true,
+        "compiledCloudFormationTemplate": {
+          "AWSTemplateFormatVersion": "2010-09-09",
+          "Description": "The AWS CloudFormation template for this Serverless application",
+          "Resources": {
+            "GetBlogsLogGroup": {
+              "Type": "AWS::Logs::LogGroup",
+              "Properties": {
+                "LogGroupName": "/aws/lambda/blog-api-dev-GetBlogs"
+              }
+            },
+            "GetBlogsByUserLogGroup": {
+              "Type": "AWS::Logs::LogGroup",
+              "Properties": {
+                "LogGroupName": "/aws/lambda/blog-api-dev-GetBlogsByUser"
+              }
+            },
+            "PostBlogLogGroup": {
+              "Type": "AWS::Logs::LogGroup",
+              "Properties": {
+                "LogGroupName": "/aws/lambda/blog-api-dev-PostBlog"
+              }
+            },
+            "UpdateBlogLogGroup": {
+              "Type": "AWS::Logs::LogGroup",
+              "Properties": {
+                "LogGroupName": "/aws/lambda/blog-api-dev-UpdateBlog"
+              }
+            },
+            "DeleteBlogLogGroup": {
+              "Type": "AWS::Logs::LogGroup",
+              "Properties": {
+                "LogGroupName": "/aws/lambda/blog-api-dev-DeleteBlog"
+              }
+            },
+            "GetBlogsLambdaFunction": {
+              "Type": "AWS::Lambda::Function",
+              "Properties": {
+                "Code": {
+                  "S3Bucket": "serverless-framework-deployments-eu-north-1-c3c8091d-0b7f",
+                  "S3Key": "serverless/blog-api/dev/1757573662719-2025-09-11T06:54:22.719Z/blog-api.zip"
+                },
+                "Handler": "functions/GetBlogs/index.handler",
+                "Runtime": "nodejs20.x",
+                "FunctionName": "blog-api-dev-GetBlogs",
+                "MemorySize": 1024,
+                "Timeout": 6,
+                "Role": "arn:aws:iam::115851773339:role/BasicLambdaRole"
+              },
+              "DependsOn": [
+                "GetBlogsLogGroup"
+              ]
+            },
+            "GetBlogsByUserLambdaFunction": {
+              "Type": "AWS::Lambda::Function",
+              "Properties": {
+                "Code": {
+                  "S3Bucket": "serverless-framework-deployments-eu-north-1-c3c8091d-0b7f",
+                  "S3Key": "serverless/blog-api/dev/1757573662719-2025-09-11T06:54:22.719Z/blog-api.zip"
+                },
+                "Handler": "functions/GetBlogsByUser/index.handler",
+                "Runtime": "nodejs20.x",
+                "FunctionName": "blog-api-dev-GetBlogsByUser",
+                "MemorySize": 1024,
+                "Timeout": 6,
+                "Role": "arn:aws:iam::115851773339:role/BasicLambdaRole"
+              },
+              "DependsOn": [
+                "GetBlogsByUserLogGroup"
+              ]
+            },
+            "PostBlogLambdaFunction": {
+              "Type": "AWS::Lambda::Function",
+              "Properties": {
+                "Code": {
+                  "S3Bucket": "serverless-framework-deployments-eu-north-1-c3c8091d-0b7f",
+                  "S3Key": "serverless/blog-api/dev/1757573662719-2025-09-11T06:54:22.719Z/blog-api.zip"
+                },
+                "Handler": "functions/PostBlog/index.handler",
+                "Runtime": "nodejs20.x",
+                "FunctionName": "blog-api-dev-PostBlog",
+                "MemorySize": 1024,
+                "Timeout": 6,
+                "Role": "arn:aws:iam::115851773339:role/BasicLambdaRole"
+              },
+              "DependsOn": [
+                "PostBlogLogGroup"
+              ]
+            },
+            "UpdateBlogLambdaFunction": {
+              "Type": "AWS::Lambda::Function",
+              "Properties": {
+                "Code": {
+                  "S3Bucket": "serverless-framework-deployments-eu-north-1-c3c8091d-0b7f",
+                  "S3Key": "serverless/blog-api/dev/1757573662719-2025-09-11T06:54:22.719Z/blog-api.zip"
+                },
+                "Handler": "functions/UpdateBlog/index.handler",
+                "Runtime": "nodejs20.x",
+                "FunctionName": "blog-api-dev-UpdateBlog",
+                "MemorySize": 1024,
+                "Timeout": 6,
+                "Role": "arn:aws:iam::115851773339:role/BasicLambdaRole"
+              },
+              "DependsOn": [
+                "UpdateBlogLogGroup"
+              ]
+            },
+            "DeleteBlogLambdaFunction": {
+              "Type": "AWS::Lambda::Function",
+              "Properties": {
+                "Code": {
+                  "S3Bucket": "serverless-framework-deployments-eu-north-1-c3c8091d-0b7f",
+                  "S3Key": "serverless/blog-api/dev/1757573662719-2025-09-11T06:54:22.719Z/blog-api.zip"
+                },
+                "Handler": "functions/DeleteBlog/index.handler",
+                "Runtime": "nodejs20.x",
+                "FunctionName": "blog-api-dev-DeleteBlog",
+                "MemorySize": 1024,
+                "Timeout": 6,
+                "Role": "arn:aws:iam::115851773339:role/BasicLambdaRole"
+              },
+              "DependsOn": [
+                "DeleteBlogLogGroup"
+              ]
+            },
+            "GetBlogsLambdaVersionYmRrK5BWYN2mQEHnqYP0945TqPpN52GICLbEGOAFqw": {
+              "Type": "AWS::Lambda::Version",
+              "DeletionPolicy": "Retain",
+              "Properties": {
+                "FunctionName": {
+                  "Ref": "GetBlogsLambdaFunction"
+                },
+                "CodeSha256": "sTWWDbM/3jAjIW3qW9b3NETsq4xwn31C7eOxYVKGLgQ="
+              }
+            },
+            "GetBlogsByUserLambdaVersionHPHqeRU3MiC0dP3dlZ2DkwZlgMlnbaDfG3iGvqDnU": {
+              "Type": "AWS::Lambda::Version",
+              "DeletionPolicy": "Retain",
+              "Properties": {
+                "FunctionName": {
+                  "Ref": "GetBlogsByUserLambdaFunction"
+                },
+                "CodeSha256": "sTWWDbM/3jAjIW3qW9b3NETsq4xwn31C7eOxYVKGLgQ="
+              }
+            },
+            "PostBlogLambdaVersionkN0JIhvsEZOlYe5ygUehwlFh2r6JlWqbN69uI9uirI": {
+              "Type": "AWS::Lambda::Version",
+              "DeletionPolicy": "Retain",
+              "Properties": {
+                "FunctionName": {
+                  "Ref": "PostBlogLambdaFunction"
+                },
+                "CodeSha256": "sTWWDbM/3jAjIW3qW9b3NETsq4xwn31C7eOxYVKGLgQ="
+              }
+            },
+            "UpdateBlogLambdaVersion8pPw610qqQKWHsoKkUrEEgfXNM25oodFjsGkm2IIPM": {
+              "Type": "AWS::Lambda::Version",
+              "DeletionPolicy": "Retain",
+              "Properties": {
+                "FunctionName": {
+                  "Ref": "UpdateBlogLambdaFunction"
+                },
+                "CodeSha256": "sTWWDbM/3jAjIW3qW9b3NETsq4xwn31C7eOxYVKGLgQ="
+              }
+            },
+            "DeleteBlogLambdaVersioneNZp5mO2yeJU4N20fZPC0ARmQpcttEDnVZVJMR8": {
+              "Type": "AWS::Lambda::Version",
+              "DeletionPolicy": "Retain",
+              "Properties": {
+                "FunctionName": {
+                  "Ref": "DeleteBlogLambdaFunction"
+                },
+                "CodeSha256": "sTWWDbM/3jAjIW3qW9b3NETsq4xwn31C7eOxYVKGLgQ="
+              }
+            },
+            "HttpApi": {
+              "Type": "AWS::ApiGatewayV2::Api",
+              "Properties": {
+                "Name": "dev-blog-api",
+                "ProtocolType": "HTTP"
+              }
+            },
+            "HttpApiStage": {
+              "Type": "AWS::ApiGatewayV2::Stage",
+              "Properties": {
+                "ApiId": {
+                  "Ref": "HttpApi"
+                },
+                "StageName": "$default",
+                "AutoDeploy": true,
+                "DefaultRouteSettings": {
+                  "DetailedMetricsEnabled": false
+                }
+              }
+            },
+            "GetBlogsLambdaPermissionHttpApi": {
+              "Type": "AWS::Lambda::Permission",
+              "Properties": {
+                "FunctionName": {
+                  "Fn::GetAtt": [
+                    "GetBlogsLambdaFunction",
+                    "Arn"
+                  ]
+                },
+                "Action": "lambda:InvokeFunction",
+                "Principal": "apigateway.amazonaws.com",
+                "SourceArn": {
+                  "Fn::Join": [
+                    "",
+                    [
+                      "arn:",
+                      {
+                        "Ref": "AWS::Partition"
+                      },
+                      ":execute-api:",
+                      {
+                        "Ref": "AWS::Region"
+                      },
+                      ":",
+                      {
+                        "Ref": "AWS::AccountId"
+                      },
+                      ":",
+                      {
+                        "Ref": "HttpApi"
+                      },
+                      "/*"
+                    ]
+                  ]
+                }
+              }
+            },
+            "HttpApiIntegrationGetBlogs": {
+              "Type": "AWS::ApiGatewayV2::Integration",
+              "Properties": {
+                "ApiId": {
+                  "Ref": "HttpApi"
+                },
+                "IntegrationType": "AWS_PROXY",
+                "IntegrationUri": {
+                  "Fn::GetAtt": [
+                    "GetBlogsLambdaFunction",
+                    "Arn"
+                  ]
+                },
+                "PayloadFormatVersion": "2.0",
+                "TimeoutInMillis": 30000
+              }
+            },
+            "HttpApiRouteGetApiBlogs": {
+              "Type": "AWS::ApiGatewayV2::Route",
+              "Properties": {
+                "ApiId": {
+                  "Ref": "HttpApi"
+                },
+                "RouteKey": "GET /api/blogs",
+                "Target": {
+                  "Fn::Join": [
+                    "/",
+                    [
+                      "integrations",
+                      {
+                        "Ref": "HttpApiIntegrationGetBlogs"
+                      }
+                    ]
+                  ]
+                }
+              },
+              "DependsOn": "HttpApiIntegrationGetBlogs"
+            },
+            "GetBlogsByUserLambdaPermissionHttpApi": {
+              "Type": "AWS::Lambda::Permission",
+              "Properties": {
+                "FunctionName": {
+                  "Fn::GetAtt": [
+                    "GetBlogsByUserLambdaFunction",
+                    "Arn"
+                  ]
+                },
+                "Action": "lambda:InvokeFunction",
+                "Principal": "apigateway.amazonaws.com",
+                "SourceArn": {
+                  "Fn::Join": [
+                    "",
+                    [
+                      "arn:",
+                      {
+                        "Ref": "AWS::Partition"
+                      },
+                      ":execute-api:",
+                      {
+                        "Ref": "AWS::Region"
+                      },
+                      ":",
+                      {
+                        "Ref": "AWS::AccountId"
+                      },
+                      ":",
+                      {
+                        "Ref": "HttpApi"
+                      },
+                      "/*"
+                    ]
+                  ]
+                }
+              }
+            },
+            "HttpApiIntegrationGetBlogsByUser": {
+              "Type": "AWS::ApiGatewayV2::Integration",
+              "Properties": {
+                "ApiId": {
+                  "Ref": "HttpApi"
+                },
+                "IntegrationType": "AWS_PROXY",
+                "IntegrationUri": {
+                  "Fn::GetAtt": [
+                    "GetBlogsByUserLambdaFunction",
+                    "Arn"
+                  ]
+                },
+                "PayloadFormatVersion": "2.0",
+                "TimeoutInMillis": 30000
+              }
+            },
+            "HttpApiRouteGetApiBlogsUserVar": {
+              "Type": "AWS::ApiGatewayV2::Route",
+              "Properties": {
+                "ApiId": {
+                  "Ref": "HttpApi"
+                },
+                "RouteKey": "GET /api/blogs/{user}",
+                "Target": {
+                  "Fn::Join": [
+                    "/",
+                    [
+                      "integrations",
+                      {
+                        "Ref": "HttpApiIntegrationGetBlogsByUser"
+                      }
+                    ]
+                  ]
+                }
+              },
+              "DependsOn": "HttpApiIntegrationGetBlogsByUser"
+            },
+            "PostBlogLambdaPermissionHttpApi": {
+              "Type": "AWS::Lambda::Permission",
+              "Properties": {
+                "FunctionName": {
+                  "Fn::GetAtt": [
+                    "PostBlogLambdaFunction",
+                    "Arn"
+                  ]
+                },
+                "Action": "lambda:InvokeFunction",
+                "Principal": "apigateway.amazonaws.com",
+                "SourceArn": {
+                  "Fn::Join": [
+                    "",
+                    [
+                      "arn:",
+                      {
+                        "Ref": "AWS::Partition"
+                      },
+                      ":execute-api:",
+                      {
+                        "Ref": "AWS::Region"
+                      },
+                      ":",
+                      {
+                        "Ref": "AWS::AccountId"
+                      },
+                      ":",
+                      {
+                        "Ref": "HttpApi"
+                      },
+                      "/*"
+                    ]
+                  ]
+                }
+              }
+            },
+            "HttpApiIntegrationPostBlog": {
+              "Type": "AWS::ApiGatewayV2::Integration",
+              "Properties": {
+                "ApiId": {
+                  "Ref": "HttpApi"
+                },
+                "IntegrationType": "AWS_PROXY",
+                "IntegrationUri": {
+                  "Fn::GetAtt": [
+                    "PostBlogLambdaFunction",
+                    "Arn"
+                  ]
+                },
+                "PayloadFormatVersion": "2.0",
+                "TimeoutInMillis": 30000
+              }
+            },
+            "HttpApiRoutePostApiBlogs": {
+              "Type": "AWS::ApiGatewayV2::Route",
+              "Properties": {
+                "ApiId": {
+                  "Ref": "HttpApi"
+                },
+                "RouteKey": "POST /api/blogs",
+                "Target": {
+                  "Fn::Join": [
+                    "/",
+                    [
+                      "integrations",
+                      {
+                        "Ref": "HttpApiIntegrationPostBlog"
+                      }
+                    ]
+                  ]
+                }
+              },
+              "DependsOn": "HttpApiIntegrationPostBlog"
+            },
+            "UpdateBlogLambdaPermissionHttpApi": {
+              "Type": "AWS::Lambda::Permission",
+              "Properties": {
+                "FunctionName": {
+                  "Fn::GetAtt": [
+                    "UpdateBlogLambdaFunction",
+                    "Arn"
+                  ]
+                },
+                "Action": "lambda:InvokeFunction",
+                "Principal": "apigateway.amazonaws.com",
+                "SourceArn": {
+                  "Fn::Join": [
+                    "",
+                    [
+                      "arn:",
+                      {
+                        "Ref": "AWS::Partition"
+                      },
+                      ":execute-api:",
+                      {
+                        "Ref": "AWS::Region"
+                      },
+                      ":",
+                      {
+                        "Ref": "AWS::AccountId"
+                      },
+                      ":",
+                      {
+                        "Ref": "HttpApi"
+                      },
+                      "/*"
+                    ]
+                  ]
+                }
+              }
+            },
+            "HttpApiIntegrationUpdateBlog": {
+              "Type": "AWS::ApiGatewayV2::Integration",
+              "Properties": {
+                "ApiId": {
+                  "Ref": "HttpApi"
+                },
+                "IntegrationType": "AWS_PROXY",
+                "IntegrationUri": {
+                  "Fn::GetAtt": [
+                    "UpdateBlogLambdaFunction",
+                    "Arn"
+                  ]
+                },
+                "PayloadFormatVersion": "2.0",
+                "TimeoutInMillis": 30000
+              }
+            },
+            "HttpApiRoutePutApiBlogsIdVar": {
+              "Type": "AWS::ApiGatewayV2::Route",
+              "Properties": {
+                "ApiId": {
+                  "Ref": "HttpApi"
+                },
+                "RouteKey": "PUT /api/blogs/{id}",
+                "Target": {
+                  "Fn::Join": [
+                    "/",
+                    [
+                      "integrations",
+                      {
+                        "Ref": "HttpApiIntegrationUpdateBlog"
+                      }
+                    ]
+                  ]
+                }
+              },
+              "DependsOn": "HttpApiIntegrationUpdateBlog"
+            },
+            "DeleteBlogLambdaPermissionHttpApi": {
+              "Type": "AWS::Lambda::Permission",
+              "Properties": {
+                "FunctionName": {
+                  "Fn::GetAtt": [
+                    "DeleteBlogLambdaFunction",
+                    "Arn"
+                  ]
+                },
+                "Action": "lambda:InvokeFunction",
+                "Principal": "apigateway.amazonaws.com",
+                "SourceArn": {
+                  "Fn::Join": [
+                    "",
+                    [
+                      "arn:",
+                      {
+                        "Ref": "AWS::Partition"
+                      },
+                      ":execute-api:",
+                      {
+                        "Ref": "AWS::Region"
+                      },
+                      ":",
+                      {
+                        "Ref": "AWS::AccountId"
+                      },
+                      ":",
+                      {
+                        "Ref": "HttpApi"
+                      },
+                      "/*"
+                    ]
+                  ]
+                }
+              }
+            },
+            "HttpApiIntegrationDeleteBlog": {
+              "Type": "AWS::ApiGatewayV2::Integration",
+              "Properties": {
+                "ApiId": {
+                  "Ref": "HttpApi"
+                },
+                "IntegrationType": "AWS_PROXY",
+                "IntegrationUri": {
+                  "Fn::GetAtt": [
+                    "DeleteBlogLambdaFunction",
+                    "Arn"
+                  ]
+                },
+                "PayloadFormatVersion": "2.0",
+                "TimeoutInMillis": 30000
+              }
+            },
+            "HttpApiRouteDeleteApiBlogsIdVar": {
+              "Type": "AWS::ApiGatewayV2::Route",
+              "Properties": {
+                "ApiId": {
+                  "Ref": "HttpApi"
+                },
+                "RouteKey": "DELETE /api/blogs/{id}",
+                "Target": {
+                  "Fn::Join": [
+                    "/",
+                    [
+                      "integrations",
+                      {
+                        "Ref": "HttpApiIntegrationDeleteBlog"
+                      }
+                    ]
+                  ]
+                }
+              },
+              "DependsOn": "HttpApiIntegrationDeleteBlog"
+            },
+            "BlogDB": {
+              "Type": "AWS::DynamoDB::Table",
+              "Properties": {
+                "TableName": "blog-db",
+                "AttributeDefinitions": [
+                  {
+                    "AttributeName": "pk",
+                    "AttributeType": "S"
+                  },
+                  {
+                    "AttributeName": "sk",
+                    "AttributeType": "S"
+                  }
+                ],
+                "KeySchema": [
+                  {
+                    "AttributeName": "pk",
+                    "KeyType": "HASH"
+                  },
+                  {
+                    "AttributeName": "sk",
+                    "KeyType": "RANGE"
+                  }
+                ],
+                "BillingMode": "PAY_PER_REQUEST"
+              }
+            }
+          },
+          "Outputs": {
+            "ServerlessDeploymentBucketName": {
+              "Value": "serverless-framework-deployments-eu-north-1-c3c8091d-0b7f",
+              "Export": {
+                "Name": "sls-blog-api-dev-ServerlessDeploymentBucketName"
+              }
+            },
+            "GetBlogsLambdaFunctionQualifiedArn": {
+              "Description": "Current Lambda function version",
+              "Value": {
+                "Ref": "GetBlogsLambdaVersionYmRrK5BWYN2mQEHnqYP0945TqPpN52GICLbEGOAFqw"
+              },
+              "Export": {
+                "Name": "sls-blog-api-dev-GetBlogsLambdaFunctionQualifiedArn"
+              }
+            },
+            "GetBlogsByUserLambdaFunctionQualifiedArn": {
+              "Description": "Current Lambda function version",
+              "Value": {
+                "Ref": "GetBlogsByUserLambdaVersionHPHqeRU3MiC0dP3dlZ2DkwZlgMlnbaDfG3iGvqDnU"
+              },
+              "Export": {
+                "Name": "sls-blog-api-dev-GetBlogsByUserLambdaFunctionQualifiedArn"
+              }
+            },
+            "PostBlogLambdaFunctionQualifiedArn": {
+              "Description": "Current Lambda function version",
+              "Value": {
+                "Ref": "PostBlogLambdaVersionkN0JIhvsEZOlYe5ygUehwlFh2r6JlWqbN69uI9uirI"
+              },
+              "Export": {
+                "Name": "sls-blog-api-dev-PostBlogLambdaFunctionQualifiedArn"
+              }
+            },
+            "UpdateBlogLambdaFunctionQualifiedArn": {
+              "Description": "Current Lambda function version",
+              "Value": {
+                "Ref": "UpdateBlogLambdaVersion8pPw610qqQKWHsoKkUrEEgfXNM25oodFjsGkm2IIPM"
+              },
+              "Export": {
+                "Name": "sls-blog-api-dev-UpdateBlogLambdaFunctionQualifiedArn"
+              }
+            },
+            "DeleteBlogLambdaFunctionQualifiedArn": {
+              "Description": "Current Lambda function version",
+              "Value": {
+                "Ref": "DeleteBlogLambdaVersioneNZp5mO2yeJU4N20fZPC0ARmQpcttEDnVZVJMR8"
+              },
+              "Export": {
+                "Name": "sls-blog-api-dev-DeleteBlogLambdaFunctionQualifiedArn"
+              }
+            },
+            "HttpApiId": {
+              "Description": "Id of the HTTP API",
+              "Value": {
+                "Ref": "HttpApi"
+              },
+              "Export": {
+                "Name": "sls-blog-api-dev-HttpApiId"
+              }
+            },
+            "HttpApiUrl": {
+              "Description": "URL of the HTTP API",
+              "Value": {
+                "Fn::Join": [
+                  "",
+                  [
+                    "https://",
+                    {
+                      "Ref": "HttpApi"
+                    },
+                    ".execute-api.",
+                    {
+                      "Ref": "AWS::Region"
+                    },
+                    ".",
+                    {
+                      "Ref": "AWS::URLSuffix"
+                    }
+                  ]
+                ]
+              },
+              "Export": {
+                "Name": "sls-blog-api-dev-HttpApiUrl"
+              }
+            }
+          }
+        },
+        "vpc": {}
+      },
+      "functions": {
+        "GetBlogs": {
+          "handler": "functions/GetBlogs/index.handler",
+          "events": [
+            {
+              "httpApi": {
+                "path": "/api/blogs",
+                "method": "GET"
+              },
+              "resolvedMethod": "GET",
+              "resolvedPath": "/api/blogs"
+            }
+          ],
+          "name": "blog-api-dev-GetBlogs",
+          "package": {},
+          "memory": 1024,
+          "timeout": 6,
+          "runtime": "nodejs20.x",
+          "vpc": {},
+          "versionLogicalId": "GetBlogsLambdaVersionYmRrK5BWYN2mQEHnqYP0945TqPpN52GICLbEGOAFqw"
+        },
+        "GetBlogsByUser": {
+          "handler": "functions/GetBlogsByUser/index.handler",
+          "events": [
+            {
+              "httpApi": {
+                "path": "/api/blogs/{user}",
+                "method": "GET"
+              },
+              "resolvedMethod": "GET",
+              "resolvedPath": "/api/blogs/{user}"
+            }
+          ],
+          "name": "blog-api-dev-GetBlogsByUser",
+          "package": {},
+          "memory": 1024,
+          "timeout": 6,
+          "runtime": "nodejs20.x",
+          "vpc": {},
+          "versionLogicalId": "GetBlogsByUserLambdaVersionHPHqeRU3MiC0dP3dlZ2DkwZlgMlnbaDfG3iGvqDnU"
+        },
+        "PostBlog": {
+          "handler": "functions/PostBlog/index.handler",
+          "events": [
+            {
+              "httpApi": {
+                "path": "/api/blogs",
+                "method": "POST"
+              },
+              "resolvedMethod": "POST",
+              "resolvedPath": "/api/blogs"
+            }
+          ],
+          "name": "blog-api-dev-PostBlog",
+          "package": {},
+          "memory": 1024,
+          "timeout": 6,
+          "runtime": "nodejs20.x",
+          "vpc": {},
+          "versionLogicalId": "PostBlogLambdaVersionkN0JIhvsEZOlYe5ygUehwlFh2r6JlWqbN69uI9uirI"
+        },
+        "UpdateBlog": {
+          "handler": "functions/UpdateBlog/index.handler",
+          "events": [
+            {
+              "httpApi": {
+                "path": "/api/blogs/{id}",
+                "method": "PUT"
+              },
+              "resolvedMethod": "PUT",
+              "resolvedPath": "/api/blogs/{id}"
+            }
+          ],
+          "name": "blog-api-dev-UpdateBlog",
+          "package": {},
+          "memory": 1024,
+          "timeout": 6,
+          "runtime": "nodejs20.x",
+          "vpc": {},
+          "versionLogicalId": "UpdateBlogLambdaVersion8pPw610qqQKWHsoKkUrEEgfXNM25oodFjsGkm2IIPM"
+        },
+        "DeleteBlog": {
+          "handler": "functions/DeleteBlog/index.handler",
+          "events": [
+            {
+              "httpApi": {
+                "path": "/api/blogs/{id}",
+                "method": "DELETE"
+              },
+              "resolvedMethod": "DELETE",
+              "resolvedPath": "/api/blogs/{id}"
+            }
+          ],
+          "name": "blog-api-dev-DeleteBlog",
+          "package": {},
+          "memory": 1024,
+          "timeout": 6,
+          "runtime": "nodejs20.x",
+          "vpc": {},
+          "versionLogicalId": "DeleteBlogLambdaVersioneNZp5mO2yeJU4N20fZPC0ARmQpcttEDnVZVJMR8"
+        }
+      },
+      "resources": {
+        "Resources": {
+          "BlogDB": {
+            "Type": "AWS::DynamoDB::Table",
+            "Properties": {
+              "TableName": "blog-db",
+              "AttributeDefinitions": [
+                {
+                  "AttributeName": "pk",
+                  "AttributeType": "S"
+                },
+                {
+                  "AttributeName": "sk",
+                  "AttributeType": "S"
+                }
+              ],
+              "KeySchema": [
+                {
+                  "AttributeName": "pk",
+                  "KeyType": "HASH"
+                },
+                {
+                  "AttributeName": "sk",
+                  "KeyType": "RANGE"
+                }
+              ],
+              "BillingMode": "PAY_PER_REQUEST"
+            }
+          }
+        },
+        "Outputs": {}
+      }
+    },
+    "provider": {
+      "name": "aws",
+      "runtime": "nodejs20.x",
+      "region": "eu-north-1",
+      "iam": {
+        "role": "arn:aws:iam::115851773339:role/BasicLambdaRole"
+      },
+      "stage": "dev",
+      "versionFunctions": true,
+      "compiledCloudFormationTemplate": {
+        "AWSTemplateFormatVersion": "2010-09-09",
+        "Description": "The AWS CloudFormation template for this Serverless application",
+        "Resources": {
+          "GetBlogsLogGroup": {
+            "Type": "AWS::Logs::LogGroup",
+            "Properties": {
+              "LogGroupName": "/aws/lambda/blog-api-dev-GetBlogs"
+            }
+          },
+          "GetBlogsByUserLogGroup": {
+            "Type": "AWS::Logs::LogGroup",
+            "Properties": {
+              "LogGroupName": "/aws/lambda/blog-api-dev-GetBlogsByUser"
+            }
+          },
+          "PostBlogLogGroup": {
+            "Type": "AWS::Logs::LogGroup",
+            "Properties": {
+              "LogGroupName": "/aws/lambda/blog-api-dev-PostBlog"
+            }
+          },
+          "UpdateBlogLogGroup": {
+            "Type": "AWS::Logs::LogGroup",
+            "Properties": {
+              "LogGroupName": "/aws/lambda/blog-api-dev-UpdateBlog"
+            }
+          },
+          "DeleteBlogLogGroup": {
+            "Type": "AWS::Logs::LogGroup",
+            "Properties": {
+              "LogGroupName": "/aws/lambda/blog-api-dev-DeleteBlog"
+            }
+          },
+          "GetBlogsLambdaFunction": {
+            "Type": "AWS::Lambda::Function",
+            "Properties": {
+              "Code": {
+                "S3Bucket": "serverless-framework-deployments-eu-north-1-c3c8091d-0b7f",
+                "S3Key": "serverless/blog-api/dev/1757573662719-2025-09-11T06:54:22.719Z/blog-api.zip"
+              },
+              "Handler": "functions/GetBlogs/index.handler",
+              "Runtime": "nodejs20.x",
+              "FunctionName": "blog-api-dev-GetBlogs",
+              "MemorySize": 1024,
+              "Timeout": 6,
+              "Role": "arn:aws:iam::115851773339:role/BasicLambdaRole"
+            },
+            "DependsOn": [
+              "GetBlogsLogGroup"
+            ]
+          },
+          "GetBlogsByUserLambdaFunction": {
+            "Type": "AWS::Lambda::Function",
+            "Properties": {
+              "Code": {
+                "S3Bucket": "serverless-framework-deployments-eu-north-1-c3c8091d-0b7f",
+                "S3Key": "serverless/blog-api/dev/1757573662719-2025-09-11T06:54:22.719Z/blog-api.zip"
+              },
+              "Handler": "functions/GetBlogsByUser/index.handler",
+              "Runtime": "nodejs20.x",
+              "FunctionName": "blog-api-dev-GetBlogsByUser",
+              "MemorySize": 1024,
+              "Timeout": 6,
+              "Role": "arn:aws:iam::115851773339:role/BasicLambdaRole"
+            },
+            "DependsOn": [
+              "GetBlogsByUserLogGroup"
+            ]
+          },
+          "PostBlogLambdaFunction": {
+            "Type": "AWS::Lambda::Function",
+            "Properties": {
+              "Code": {
+                "S3Bucket": "serverless-framework-deployments-eu-north-1-c3c8091d-0b7f",
+                "S3Key": "serverless/blog-api/dev/1757573662719-2025-09-11T06:54:22.719Z/blog-api.zip"
+              },
+              "Handler": "functions/PostBlog/index.handler",
+              "Runtime": "nodejs20.x",
+              "FunctionName": "blog-api-dev-PostBlog",
+              "MemorySize": 1024,
+              "Timeout": 6,
+              "Role": "arn:aws:iam::115851773339:role/BasicLambdaRole"
+            },
+            "DependsOn": [
+              "PostBlogLogGroup"
+            ]
+          },
+          "UpdateBlogLambdaFunction": {
+            "Type": "AWS::Lambda::Function",
+            "Properties": {
+              "Code": {
+                "S3Bucket": "serverless-framework-deployments-eu-north-1-c3c8091d-0b7f",
+                "S3Key": "serverless/blog-api/dev/1757573662719-2025-09-11T06:54:22.719Z/blog-api.zip"
+              },
+              "Handler": "functions/UpdateBlog/index.handler",
+              "Runtime": "nodejs20.x",
+              "FunctionName": "blog-api-dev-UpdateBlog",
+              "MemorySize": 1024,
+              "Timeout": 6,
+              "Role": "arn:aws:iam::115851773339:role/BasicLambdaRole"
+            },
+            "DependsOn": [
+              "UpdateBlogLogGroup"
+            ]
+          },
+          "DeleteBlogLambdaFunction": {
+            "Type": "AWS::Lambda::Function",
+            "Properties": {
+              "Code": {
+                "S3Bucket": "serverless-framework-deployments-eu-north-1-c3c8091d-0b7f",
+                "S3Key": "serverless/blog-api/dev/1757573662719-2025-09-11T06:54:22.719Z/blog-api.zip"
+              },
+              "Handler": "functions/DeleteBlog/index.handler",
+              "Runtime": "nodejs20.x",
+              "FunctionName": "blog-api-dev-DeleteBlog",
+              "MemorySize": 1024,
+              "Timeout": 6,
+              "Role": "arn:aws:iam::115851773339:role/BasicLambdaRole"
+            },
+            "DependsOn": [
+              "DeleteBlogLogGroup"
+            ]
+          },
+          "GetBlogsLambdaVersionYmRrK5BWYN2mQEHnqYP0945TqPpN52GICLbEGOAFqw": {
+            "Type": "AWS::Lambda::Version",
+            "DeletionPolicy": "Retain",
+            "Properties": {
+              "FunctionName": {
+                "Ref": "GetBlogsLambdaFunction"
+              },
+              "CodeSha256": "sTWWDbM/3jAjIW3qW9b3NETsq4xwn31C7eOxYVKGLgQ="
+            }
+          },
+          "GetBlogsByUserLambdaVersionHPHqeRU3MiC0dP3dlZ2DkwZlgMlnbaDfG3iGvqDnU": {
+            "Type": "AWS::Lambda::Version",
+            "DeletionPolicy": "Retain",
+            "Properties": {
+              "FunctionName": {
+                "Ref": "GetBlogsByUserLambdaFunction"
+              },
+              "CodeSha256": "sTWWDbM/3jAjIW3qW9b3NETsq4xwn31C7eOxYVKGLgQ="
+            }
+          },
+          "PostBlogLambdaVersionkN0JIhvsEZOlYe5ygUehwlFh2r6JlWqbN69uI9uirI": {
+            "Type": "AWS::Lambda::Version",
+            "DeletionPolicy": "Retain",
+            "Properties": {
+              "FunctionName": {
+                "Ref": "PostBlogLambdaFunction"
+              },
+              "CodeSha256": "sTWWDbM/3jAjIW3qW9b3NETsq4xwn31C7eOxYVKGLgQ="
+            }
+          },
+          "UpdateBlogLambdaVersion8pPw610qqQKWHsoKkUrEEgfXNM25oodFjsGkm2IIPM": {
+            "Type": "AWS::Lambda::Version",
+            "DeletionPolicy": "Retain",
+            "Properties": {
+              "FunctionName": {
+                "Ref": "UpdateBlogLambdaFunction"
+              },
+              "CodeSha256": "sTWWDbM/3jAjIW3qW9b3NETsq4xwn31C7eOxYVKGLgQ="
+            }
+          },
+          "DeleteBlogLambdaVersioneNZp5mO2yeJU4N20fZPC0ARmQpcttEDnVZVJMR8": {
+            "Type": "AWS::Lambda::Version",
+            "DeletionPolicy": "Retain",
+            "Properties": {
+              "FunctionName": {
+                "Ref": "DeleteBlogLambdaFunction"
+              },
+              "CodeSha256": "sTWWDbM/3jAjIW3qW9b3NETsq4xwn31C7eOxYVKGLgQ="
+            }
+          },
+          "HttpApi": {
+            "Type": "AWS::ApiGatewayV2::Api",
+            "Properties": {
+              "Name": "dev-blog-api",
+              "ProtocolType": "HTTP"
+            }
+          },
+          "HttpApiStage": {
+            "Type": "AWS::ApiGatewayV2::Stage",
+            "Properties": {
+              "ApiId": {
+                "Ref": "HttpApi"
+              },
+              "StageName": "$default",
+              "AutoDeploy": true,
+              "DefaultRouteSettings": {
+                "DetailedMetricsEnabled": false
+              }
+            }
+          },
+          "GetBlogsLambdaPermissionHttpApi": {
+            "Type": "AWS::Lambda::Permission",
+            "Properties": {
+              "FunctionName": {
+                "Fn::GetAtt": [
+                  "GetBlogsLambdaFunction",
+                  "Arn"
+                ]
+              },
+              "Action": "lambda:InvokeFunction",
+              "Principal": "apigateway.amazonaws.com",
+              "SourceArn": {
+                "Fn::Join": [
+                  "",
+                  [
+                    "arn:",
+                    {
+                      "Ref": "AWS::Partition"
+                    },
+                    ":execute-api:",
+                    {
+                      "Ref": "AWS::Region"
+                    },
+                    ":",
+                    {
+                      "Ref": "AWS::AccountId"
+                    },
+                    ":",
+                    {
+                      "Ref": "HttpApi"
+                    },
+                    "/*"
+                  ]
+                ]
+              }
+            }
+          },
+          "HttpApiIntegrationGetBlogs": {
+            "Type": "AWS::ApiGatewayV2::Integration",
+            "Properties": {
+              "ApiId": {
+                "Ref": "HttpApi"
+              },
+              "IntegrationType": "AWS_PROXY",
+              "IntegrationUri": {
+                "Fn::GetAtt": [
+                  "GetBlogsLambdaFunction",
+                  "Arn"
+                ]
+              },
+              "PayloadFormatVersion": "2.0",
+              "TimeoutInMillis": 30000
+            }
+          },
+          "HttpApiRouteGetApiBlogs": {
+            "Type": "AWS::ApiGatewayV2::Route",
+            "Properties": {
+              "ApiId": {
+                "Ref": "HttpApi"
+              },
+              "RouteKey": "GET /api/blogs",
+              "Target": {
+                "Fn::Join": [
+                  "/",
+                  [
+                    "integrations",
+                    {
+                      "Ref": "HttpApiIntegrationGetBlogs"
+                    }
+                  ]
+                ]
+              }
+            },
+            "DependsOn": "HttpApiIntegrationGetBlogs"
+          },
+          "GetBlogsByUserLambdaPermissionHttpApi": {
+            "Type": "AWS::Lambda::Permission",
+            "Properties": {
+              "FunctionName": {
+                "Fn::GetAtt": [
+                  "GetBlogsByUserLambdaFunction",
+                  "Arn"
+                ]
+              },
+              "Action": "lambda:InvokeFunction",
+              "Principal": "apigateway.amazonaws.com",
+              "SourceArn": {
+                "Fn::Join": [
+                  "",
+                  [
+                    "arn:",
+                    {
+                      "Ref": "AWS::Partition"
+                    },
+                    ":execute-api:",
+                    {
+                      "Ref": "AWS::Region"
+                    },
+                    ":",
+                    {
+                      "Ref": "AWS::AccountId"
+                    },
+                    ":",
+                    {
+                      "Ref": "HttpApi"
+                    },
+                    "/*"
+                  ]
+                ]
+              }
+            }
+          },
+          "HttpApiIntegrationGetBlogsByUser": {
+            "Type": "AWS::ApiGatewayV2::Integration",
+            "Properties": {
+              "ApiId": {
+                "Ref": "HttpApi"
+              },
+              "IntegrationType": "AWS_PROXY",
+              "IntegrationUri": {
+                "Fn::GetAtt": [
+                  "GetBlogsByUserLambdaFunction",
+                  "Arn"
+                ]
+              },
+              "PayloadFormatVersion": "2.0",
+              "TimeoutInMillis": 30000
+            }
+          },
+          "HttpApiRouteGetApiBlogsUserVar": {
+            "Type": "AWS::ApiGatewayV2::Route",
+            "Properties": {
+              "ApiId": {
+                "Ref": "HttpApi"
+              },
+              "RouteKey": "GET /api/blogs/{user}",
+              "Target": {
+                "Fn::Join": [
+                  "/",
+                  [
+                    "integrations",
+                    {
+                      "Ref": "HttpApiIntegrationGetBlogsByUser"
+                    }
+                  ]
+                ]
+              }
+            },
+            "DependsOn": "HttpApiIntegrationGetBlogsByUser"
+          },
+          "PostBlogLambdaPermissionHttpApi": {
+            "Type": "AWS::Lambda::Permission",
+            "Properties": {
+              "FunctionName": {
+                "Fn::GetAtt": [
+                  "PostBlogLambdaFunction",
+                  "Arn"
+                ]
+              },
+              "Action": "lambda:InvokeFunction",
+              "Principal": "apigateway.amazonaws.com",
+              "SourceArn": {
+                "Fn::Join": [
+                  "",
+                  [
+                    "arn:",
+                    {
+                      "Ref": "AWS::Partition"
+                    },
+                    ":execute-api:",
+                    {
+                      "Ref": "AWS::Region"
+                    },
+                    ":",
+                    {
+                      "Ref": "AWS::AccountId"
+                    },
+                    ":",
+                    {
+                      "Ref": "HttpApi"
+                    },
+                    "/*"
+                  ]
+                ]
+              }
+            }
+          },
+          "HttpApiIntegrationPostBlog": {
+            "Type": "AWS::ApiGatewayV2::Integration",
+            "Properties": {
+              "ApiId": {
+                "Ref": "HttpApi"
+              },
+              "IntegrationType": "AWS_PROXY",
+              "IntegrationUri": {
+                "Fn::GetAtt": [
+                  "PostBlogLambdaFunction",
+                  "Arn"
+                ]
+              },
+              "PayloadFormatVersion": "2.0",
+              "TimeoutInMillis": 30000
+            }
+          },
+          "HttpApiRoutePostApiBlogs": {
+            "Type": "AWS::ApiGatewayV2::Route",
+            "Properties": {
+              "ApiId": {
+                "Ref": "HttpApi"
+              },
+              "RouteKey": "POST /api/blogs",
+              "Target": {
+                "Fn::Join": [
+                  "/",
+                  [
+                    "integrations",
+                    {
+                      "Ref": "HttpApiIntegrationPostBlog"
+                    }
+                  ]
+                ]
+              }
+            },
+            "DependsOn": "HttpApiIntegrationPostBlog"
+          },
+          "UpdateBlogLambdaPermissionHttpApi": {
+            "Type": "AWS::Lambda::Permission",
+            "Properties": {
+              "FunctionName": {
+                "Fn::GetAtt": [
+                  "UpdateBlogLambdaFunction",
+                  "Arn"
+                ]
+              },
+              "Action": "lambda:InvokeFunction",
+              "Principal": "apigateway.amazonaws.com",
+              "SourceArn": {
+                "Fn::Join": [
+                  "",
+                  [
+                    "arn:",
+                    {
+                      "Ref": "AWS::Partition"
+                    },
+                    ":execute-api:",
+                    {
+                      "Ref": "AWS::Region"
+                    },
+                    ":",
+                    {
+                      "Ref": "AWS::AccountId"
+                    },
+                    ":",
+                    {
+                      "Ref": "HttpApi"
+                    },
+                    "/*"
+                  ]
+                ]
+              }
+            }
+          },
+          "HttpApiIntegrationUpdateBlog": {
+            "Type": "AWS::ApiGatewayV2::Integration",
+            "Properties": {
+              "ApiId": {
+                "Ref": "HttpApi"
+              },
+              "IntegrationType": "AWS_PROXY",
+              "IntegrationUri": {
+                "Fn::GetAtt": [
+                  "UpdateBlogLambdaFunction",
+                  "Arn"
+                ]
+              },
+              "PayloadFormatVersion": "2.0",
+              "TimeoutInMillis": 30000
+            }
+          },
+          "HttpApiRoutePutApiBlogsIdVar": {
+            "Type": "AWS::ApiGatewayV2::Route",
+            "Properties": {
+              "ApiId": {
+                "Ref": "HttpApi"
+              },
+              "RouteKey": "PUT /api/blogs/{id}",
+              "Target": {
+                "Fn::Join": [
+                  "/",
+                  [
+                    "integrations",
+                    {
+                      "Ref": "HttpApiIntegrationUpdateBlog"
+                    }
+                  ]
+                ]
+              }
+            },
+            "DependsOn": "HttpApiIntegrationUpdateBlog"
+          },
+          "DeleteBlogLambdaPermissionHttpApi": {
+            "Type": "AWS::Lambda::Permission",
+            "Properties": {
+              "FunctionName": {
+                "Fn::GetAtt": [
+                  "DeleteBlogLambdaFunction",
+                  "Arn"
+                ]
+              },
+              "Action": "lambda:InvokeFunction",
+              "Principal": "apigateway.amazonaws.com",
+              "SourceArn": {
+                "Fn::Join": [
+                  "",
+                  [
+                    "arn:",
+                    {
+                      "Ref": "AWS::Partition"
+                    },
+                    ":execute-api:",
+                    {
+                      "Ref": "AWS::Region"
+                    },
+                    ":",
+                    {
+                      "Ref": "AWS::AccountId"
+                    },
+                    ":",
+                    {
+                      "Ref": "HttpApi"
+                    },
+                    "/*"
+                  ]
+                ]
+              }
+            }
+          },
+          "HttpApiIntegrationDeleteBlog": {
+            "Type": "AWS::ApiGatewayV2::Integration",
+            "Properties": {
+              "ApiId": {
+                "Ref": "HttpApi"
+              },
+              "IntegrationType": "AWS_PROXY",
+              "IntegrationUri": {
+                "Fn::GetAtt": [
+                  "DeleteBlogLambdaFunction",
+                  "Arn"
+                ]
+              },
+              "PayloadFormatVersion": "2.0",
+              "TimeoutInMillis": 30000
+            }
+          },
+          "HttpApiRouteDeleteApiBlogsIdVar": {
+            "Type": "AWS::ApiGatewayV2::Route",
+            "Properties": {
+              "ApiId": {
+                "Ref": "HttpApi"
+              },
+              "RouteKey": "DELETE /api/blogs/{id}",
+              "Target": {
+                "Fn::Join": [
+                  "/",
+                  [
+                    "integrations",
+                    {
+                      "Ref": "HttpApiIntegrationDeleteBlog"
+                    }
+                  ]
+                ]
+              }
+            },
+            "DependsOn": "HttpApiIntegrationDeleteBlog"
+          },
+          "BlogDB": {
+            "Type": "AWS::DynamoDB::Table",
+            "Properties": {
+              "TableName": "blog-db",
+              "AttributeDefinitions": [
+                {
+                  "AttributeName": "pk",
+                  "AttributeType": "S"
+                },
+                {
+                  "AttributeName": "sk",
+                  "AttributeType": "S"
+                }
+              ],
+              "KeySchema": [
+                {
+                  "AttributeName": "pk",
+                  "KeyType": "HASH"
+                },
+                {
+                  "AttributeName": "sk",
+                  "KeyType": "RANGE"
+                }
+              ],
+              "BillingMode": "PAY_PER_REQUEST"
+            }
+          }
+        },
+        "Outputs": {
+          "ServerlessDeploymentBucketName": {
+            "Value": "serverless-framework-deployments-eu-north-1-c3c8091d-0b7f",
+            "Export": {
+              "Name": "sls-blog-api-dev-ServerlessDeploymentBucketName"
+            }
+          },
+          "GetBlogsLambdaFunctionQualifiedArn": {
+            "Description": "Current Lambda function version",
+            "Value": {
+              "Ref": "GetBlogsLambdaVersionYmRrK5BWYN2mQEHnqYP0945TqPpN52GICLbEGOAFqw"
+            },
+            "Export": {
+              "Name": "sls-blog-api-dev-GetBlogsLambdaFunctionQualifiedArn"
+            }
+          },
+          "GetBlogsByUserLambdaFunctionQualifiedArn": {
+            "Description": "Current Lambda function version",
+            "Value": {
+              "Ref": "GetBlogsByUserLambdaVersionHPHqeRU3MiC0dP3dlZ2DkwZlgMlnbaDfG3iGvqDnU"
+            },
+            "Export": {
+              "Name": "sls-blog-api-dev-GetBlogsByUserLambdaFunctionQualifiedArn"
+            }
+          },
+          "PostBlogLambdaFunctionQualifiedArn": {
+            "Description": "Current Lambda function version",
+            "Value": {
+              "Ref": "PostBlogLambdaVersionkN0JIhvsEZOlYe5ygUehwlFh2r6JlWqbN69uI9uirI"
+            },
+            "Export": {
+              "Name": "sls-blog-api-dev-PostBlogLambdaFunctionQualifiedArn"
+            }
+          },
+          "UpdateBlogLambdaFunctionQualifiedArn": {
+            "Description": "Current Lambda function version",
+            "Value": {
+              "Ref": "UpdateBlogLambdaVersion8pPw610qqQKWHsoKkUrEEgfXNM25oodFjsGkm2IIPM"
+            },
+            "Export": {
+              "Name": "sls-blog-api-dev-UpdateBlogLambdaFunctionQualifiedArn"
+            }
+          },
+          "DeleteBlogLambdaFunctionQualifiedArn": {
+            "Description": "Current Lambda function version",
+            "Value": {
+              "Ref": "DeleteBlogLambdaVersioneNZp5mO2yeJU4N20fZPC0ARmQpcttEDnVZVJMR8"
+            },
+            "Export": {
+              "Name": "sls-blog-api-dev-DeleteBlogLambdaFunctionQualifiedArn"
+            }
+          },
+          "HttpApiId": {
+            "Description": "Id of the HTTP API",
+            "Value": {
+              "Ref": "HttpApi"
+            },
+            "Export": {
+              "Name": "sls-blog-api-dev-HttpApiId"
+            }
+          },
+          "HttpApiUrl": {
+            "Description": "URL of the HTTP API",
+            "Value": {
+              "Fn::Join": [
+                "",
+                [
+                  "https://",
+                  {
+                    "Ref": "HttpApi"
+                  },
+                  ".execute-api.",
+                  {
+                    "Ref": "AWS::Region"
+                  },
+                  ".",
+                  {
+                    "Ref": "AWS::URLSuffix"
+                  }
+                ]
+              ]
+            },
+            "Export": {
+              "Name": "sls-blog-api-dev-HttpApiUrl"
+            }
+          }
+        }
+      },
+      "vpc": {}
+    },
+    "dashboard": {
+      "isEnabledForService": false,
+      "requiredAuthentication": false,
+      "orgFeaturesInUse": null,
+      "orgObservabilityIntegrations": null,
+      "serviceAppId": null,
+      "serviceProvider": null,
+      "instanceParameters": null
+    },
+    "serviceRawFile": "# \"org\" ensures this Service is used with the correct Serverless Framework Access Key.\norg: frontend2024thapa\nservice: blog-api\n\nprovider:\n  name: aws\n  runtime: nodejs20.x\n  region: eu-north-1\n  iam:\n    role: ${file(./config.yml):aws.role}\n\nfunctions:\n  GetBlogs:\n    handler: functions/GetBlogs/index.handler\n    events:\n      - httpApi:\n          path: /api/blogs\n          method: GET\n  GetBlogsByUser:\n    handler: functions/GetBlogsByUser/index.handler\n    events:\n      - httpApi:\n          path: /api/blogs/{user}\n          method: GET\n  PostBlog:\n    handler: functions/PostBlog/index.handler\n    events:\n      - httpApi:\n          path: /api/blogs\n          method: POST\n  UpdateBlog:\n    handler: functions/UpdateBlog/index.handler\n    events:\n      - httpApi:\n          path: /api/blogs/{id}\n          method: PUT\n  DeleteBlog:\n    handler: functions/DeleteBlog/index.handler\n    events:\n      - httpApi:\n          path: /api/blogs/{id}\n          method: DELETE\n\nresources:\n  Resources:\n    BlogDB:\n      Type: AWS::DynamoDB::Table\n      Properties:\n        TableName: \"blog-db\"\n        AttributeDefinitions:\n          - AttributeName: \"pk\"\n            AttributeType: \"S\"\n          - AttributeName: \"sk\"\n            AttributeType: \"S\"\n        KeySchema:\n          - AttributeName: \"pk\"\n            KeyType: HASH\n          - AttributeName: \"sk\"\n            KeyType: RANGE\n        BillingMode: PAY_PER_REQUEST\n",
+    "command": [
+      "deploy"
+    ],
     "options": {},
-    "serviceProviderAwsCfStackId": null,
-    "serviceProviderAwsCfStackCreated": null,
+    "orgId": "d500ec05-b67c-4592-8396-1c3a8be7a4d3",
+    "orgName": "frontend2024thapa",
+    "userId": "kF0jz6vSGYDtGnfsHQ",
+    "userName": "frontend2024thapa",
+    "serviceProviderAwsAccountId": "115851773339",
+    "serviceProviderAwsCfStackName": "blog-api-dev",
+    "serviceProviderAwsCfStackId": "arn:aws:cloudformation:eu-north-1:115851773339:stack/blog-api-dev/2716a470-8edc-11f0-a198-0e11e35f6c2f",
+    "serviceProviderAwsCfStackCreated": "2025-09-11T06:54:24.946Z",
     "serviceProviderAwsCfStackUpdated": null,
-    "serviceProviderAwsCfStackStatus": null,
-    "serviceProviderAwsCfStackOutputs": null
+    "serviceProviderAwsCfStackStatus": "CREATE_COMPLETE",
+    "serviceProviderAwsCfStackOutputs": [
+      {
+        "OutputKey": "UpdateBlogLambdaFunctionQualifiedArn",
+        "OutputValue": "arn:aws:lambda:eu-north-1:115851773339:function:blog-api-dev-UpdateBlog:1",
+        "Description": "Current Lambda function version",
+        "ExportName": "sls-blog-api-dev-UpdateBlogLambdaFunctionQualifiedArn"
+      },
+      {
+        "OutputKey": "DeleteBlogLambdaFunctionQualifiedArn",
+        "OutputValue": "arn:aws:lambda:eu-north-1:115851773339:function:blog-api-dev-DeleteBlog:1",
+        "Description": "Current Lambda function version",
+        "ExportName": "sls-blog-api-dev-DeleteBlogLambdaFunctionQualifiedArn"
+      },
+      {
+        "OutputKey": "HttpApiId",
+        "OutputValue": "0eu1unao4k",
+        "Description": "Id of the HTTP API",
+        "ExportName": "sls-blog-api-dev-HttpApiId"
+      },
+      {
+        "OutputKey": "PostBlogLambdaFunctionQualifiedArn",
+        "OutputValue": "arn:aws:lambda:eu-north-1:115851773339:function:blog-api-dev-PostBlog:1",
+        "Description": "Current Lambda function version",
+        "ExportName": "sls-blog-api-dev-PostBlogLambdaFunctionQualifiedArn"
+      },
+      {
+        "OutputKey": "GetBlogsLambdaFunctionQualifiedArn",
+        "OutputValue": "arn:aws:lambda:eu-north-1:115851773339:function:blog-api-dev-GetBlogs:1",
+        "Description": "Current Lambda function version",
+        "ExportName": "sls-blog-api-dev-GetBlogsLambdaFunctionQualifiedArn"
+      },
+      {
+        "OutputKey": "GetBlogsByUserLambdaFunctionQualifiedArn",
+        "OutputValue": "arn:aws:lambda:eu-north-1:115851773339:function:blog-api-dev-GetBlogsByUser:1",
+        "Description": "Current Lambda function version",
+        "ExportName": "sls-blog-api-dev-GetBlogsByUserLambdaFunctionQualifiedArn"
+      },
+      {
+        "OutputKey": "ServerlessDeploymentBucketName",
+        "OutputValue": "serverless-framework-deployments-eu-north-1-c3c8091d-0b7f",
+        "ExportName": "sls-blog-api-dev-ServerlessDeploymentBucketName"
+      },
+      {
+        "OutputKey": "HttpApiUrl",
+        "OutputValue": "https://0eu1unao4k.execute-api.eu-north-1.amazonaws.com",
+        "Description": "URL of the HTTP API",
+        "ExportName": "sls-blog-api-dev-HttpApiUrl"
+      }
+    ],
+    "compiledCloudFormationTemplate": {
+      "AWSTemplateFormatVersion": "2010-09-09",
+      "Description": "The AWS CloudFormation template for this Serverless application",
+      "Resources": {
+        "GetBlogsLogGroup": {
+          "Type": "AWS::Logs::LogGroup",
+          "Properties": {
+            "LogGroupName": "/aws/lambda/blog-api-dev-GetBlogs"
+          }
+        },
+        "GetBlogsByUserLogGroup": {
+          "Type": "AWS::Logs::LogGroup",
+          "Properties": {
+            "LogGroupName": "/aws/lambda/blog-api-dev-GetBlogsByUser"
+          }
+        },
+        "PostBlogLogGroup": {
+          "Type": "AWS::Logs::LogGroup",
+          "Properties": {
+            "LogGroupName": "/aws/lambda/blog-api-dev-PostBlog"
+          }
+        },
+        "UpdateBlogLogGroup": {
+          "Type": "AWS::Logs::LogGroup",
+          "Properties": {
+            "LogGroupName": "/aws/lambda/blog-api-dev-UpdateBlog"
+          }
+        },
+        "DeleteBlogLogGroup": {
+          "Type": "AWS::Logs::LogGroup",
+          "Properties": {
+            "LogGroupName": "/aws/lambda/blog-api-dev-DeleteBlog"
+          }
+        },
+        "GetBlogsLambdaFunction": {
+          "Type": "AWS::Lambda::Function",
+          "Properties": {
+            "Code": {
+              "S3Bucket": "serverless-framework-deployments-eu-north-1-c3c8091d-0b7f",
+              "S3Key": "serverless/blog-api/dev/1757573662719-2025-09-11T06:54:22.719Z/blog-api.zip"
+            },
+            "Handler": "functions/GetBlogs/index.handler",
+            "Runtime": "nodejs20.x",
+            "FunctionName": "blog-api-dev-GetBlogs",
+            "MemorySize": 1024,
+            "Timeout": 6,
+            "Role": "arn:aws:iam::115851773339:role/BasicLambdaRole"
+          },
+          "DependsOn": [
+            "GetBlogsLogGroup"
+          ]
+        },
+        "GetBlogsByUserLambdaFunction": {
+          "Type": "AWS::Lambda::Function",
+          "Properties": {
+            "Code": {
+              "S3Bucket": "serverless-framework-deployments-eu-north-1-c3c8091d-0b7f",
+              "S3Key": "serverless/blog-api/dev/1757573662719-2025-09-11T06:54:22.719Z/blog-api.zip"
+            },
+            "Handler": "functions/GetBlogsByUser/index.handler",
+            "Runtime": "nodejs20.x",
+            "FunctionName": "blog-api-dev-GetBlogsByUser",
+            "MemorySize": 1024,
+            "Timeout": 6,
+            "Role": "arn:aws:iam::115851773339:role/BasicLambdaRole"
+          },
+          "DependsOn": [
+            "GetBlogsByUserLogGroup"
+          ]
+        },
+        "PostBlogLambdaFunction": {
+          "Type": "AWS::Lambda::Function",
+          "Properties": {
+            "Code": {
+              "S3Bucket": "serverless-framework-deployments-eu-north-1-c3c8091d-0b7f",
+              "S3Key": "serverless/blog-api/dev/1757573662719-2025-09-11T06:54:22.719Z/blog-api.zip"
+            },
+            "Handler": "functions/PostBlog/index.handler",
+            "Runtime": "nodejs20.x",
+            "FunctionName": "blog-api-dev-PostBlog",
+            "MemorySize": 1024,
+            "Timeout": 6,
+            "Role": "arn:aws:iam::115851773339:role/BasicLambdaRole"
+          },
+          "DependsOn": [
+            "PostBlogLogGroup"
+          ]
+        },
+        "UpdateBlogLambdaFunction": {
+          "Type": "AWS::Lambda::Function",
+          "Properties": {
+            "Code": {
+              "S3Bucket": "serverless-framework-deployments-eu-north-1-c3c8091d-0b7f",
+              "S3Key": "serverless/blog-api/dev/1757573662719-2025-09-11T06:54:22.719Z/blog-api.zip"
+            },
+            "Handler": "functions/UpdateBlog/index.handler",
+            "Runtime": "nodejs20.x",
+            "FunctionName": "blog-api-dev-UpdateBlog",
+            "MemorySize": 1024,
+            "Timeout": 6,
+            "Role": "arn:aws:iam::115851773339:role/BasicLambdaRole"
+          },
+          "DependsOn": [
+            "UpdateBlogLogGroup"
+          ]
+        },
+        "DeleteBlogLambdaFunction": {
+          "Type": "AWS::Lambda::Function",
+          "Properties": {
+            "Code": {
+              "S3Bucket": "serverless-framework-deployments-eu-north-1-c3c8091d-0b7f",
+              "S3Key": "serverless/blog-api/dev/1757573662719-2025-09-11T06:54:22.719Z/blog-api.zip"
+            },
+            "Handler": "functions/DeleteBlog/index.handler",
+            "Runtime": "nodejs20.x",
+            "FunctionName": "blog-api-dev-DeleteBlog",
+            "MemorySize": 1024,
+            "Timeout": 6,
+            "Role": "arn:aws:iam::115851773339:role/BasicLambdaRole"
+          },
+          "DependsOn": [
+            "DeleteBlogLogGroup"
+          ]
+        },
+        "GetBlogsLambdaVersionYmRrK5BWYN2mQEHnqYP0945TqPpN52GICLbEGOAFqw": {
+          "Type": "AWS::Lambda::Version",
+          "DeletionPolicy": "Retain",
+          "Properties": {
+            "FunctionName": {
+              "Ref": "GetBlogsLambdaFunction"
+            },
+            "CodeSha256": "sTWWDbM/3jAjIW3qW9b3NETsq4xwn31C7eOxYVKGLgQ="
+          }
+        },
+        "GetBlogsByUserLambdaVersionHPHqeRU3MiC0dP3dlZ2DkwZlgMlnbaDfG3iGvqDnU": {
+          "Type": "AWS::Lambda::Version",
+          "DeletionPolicy": "Retain",
+          "Properties": {
+            "FunctionName": {
+              "Ref": "GetBlogsByUserLambdaFunction"
+            },
+            "CodeSha256": "sTWWDbM/3jAjIW3qW9b3NETsq4xwn31C7eOxYVKGLgQ="
+          }
+        },
+        "PostBlogLambdaVersionkN0JIhvsEZOlYe5ygUehwlFh2r6JlWqbN69uI9uirI": {
+          "Type": "AWS::Lambda::Version",
+          "DeletionPolicy": "Retain",
+          "Properties": {
+            "FunctionName": {
+              "Ref": "PostBlogLambdaFunction"
+            },
+            "CodeSha256": "sTWWDbM/3jAjIW3qW9b3NETsq4xwn31C7eOxYVKGLgQ="
+          }
+        },
+        "UpdateBlogLambdaVersion8pPw610qqQKWHsoKkUrEEgfXNM25oodFjsGkm2IIPM": {
+          "Type": "AWS::Lambda::Version",
+          "DeletionPolicy": "Retain",
+          "Properties": {
+            "FunctionName": {
+              "Ref": "UpdateBlogLambdaFunction"
+            },
+            "CodeSha256": "sTWWDbM/3jAjIW3qW9b3NETsq4xwn31C7eOxYVKGLgQ="
+          }
+        },
+        "DeleteBlogLambdaVersioneNZp5mO2yeJU4N20fZPC0ARmQpcttEDnVZVJMR8": {
+          "Type": "AWS::Lambda::Version",
+          "DeletionPolicy": "Retain",
+          "Properties": {
+            "FunctionName": {
+              "Ref": "DeleteBlogLambdaFunction"
+            },
+            "CodeSha256": "sTWWDbM/3jAjIW3qW9b3NETsq4xwn31C7eOxYVKGLgQ="
+          }
+        },
+        "HttpApi": {
+          "Type": "AWS::ApiGatewayV2::Api",
+          "Properties": {
+            "Name": "dev-blog-api",
+            "ProtocolType": "HTTP"
+          }
+        },
+        "HttpApiStage": {
+          "Type": "AWS::ApiGatewayV2::Stage",
+          "Properties": {
+            "ApiId": {
+              "Ref": "HttpApi"
+            },
+            "StageName": "$default",
+            "AutoDeploy": true,
+            "DefaultRouteSettings": {
+              "DetailedMetricsEnabled": false
+            }
+          }
+        },
+        "GetBlogsLambdaPermissionHttpApi": {
+          "Type": "AWS::Lambda::Permission",
+          "Properties": {
+            "FunctionName": {
+              "Fn::GetAtt": [
+                "GetBlogsLambdaFunction",
+                "Arn"
+              ]
+            },
+            "Action": "lambda:InvokeFunction",
+            "Principal": "apigateway.amazonaws.com",
+            "SourceArn": {
+              "Fn::Join": [
+                "",
+                [
+                  "arn:",
+                  {
+                    "Ref": "AWS::Partition"
+                  },
+                  ":execute-api:",
+                  {
+                    "Ref": "AWS::Region"
+                  },
+                  ":",
+                  {
+                    "Ref": "AWS::AccountId"
+                  },
+                  ":",
+                  {
+                    "Ref": "HttpApi"
+                  },
+                  "/*"
+                ]
+              ]
+            }
+          }
+        },
+        "HttpApiIntegrationGetBlogs": {
+          "Type": "AWS::ApiGatewayV2::Integration",
+          "Properties": {
+            "ApiId": {
+              "Ref": "HttpApi"
+            },
+            "IntegrationType": "AWS_PROXY",
+            "IntegrationUri": {
+              "Fn::GetAtt": [
+                "GetBlogsLambdaFunction",
+                "Arn"
+              ]
+            },
+            "PayloadFormatVersion": "2.0",
+            "TimeoutInMillis": 30000
+          }
+        },
+        "HttpApiRouteGetApiBlogs": {
+          "Type": "AWS::ApiGatewayV2::Route",
+          "Properties": {
+            "ApiId": {
+              "Ref": "HttpApi"
+            },
+            "RouteKey": "GET /api/blogs",
+            "Target": {
+              "Fn::Join": [
+                "/",
+                [
+                  "integrations",
+                  {
+                    "Ref": "HttpApiIntegrationGetBlogs"
+                  }
+                ]
+              ]
+            }
+          },
+          "DependsOn": "HttpApiIntegrationGetBlogs"
+        },
+        "GetBlogsByUserLambdaPermissionHttpApi": {
+          "Type": "AWS::Lambda::Permission",
+          "Properties": {
+            "FunctionName": {
+              "Fn::GetAtt": [
+                "GetBlogsByUserLambdaFunction",
+                "Arn"
+              ]
+            },
+            "Action": "lambda:InvokeFunction",
+            "Principal": "apigateway.amazonaws.com",
+            "SourceArn": {
+              "Fn::Join": [
+                "",
+                [
+                  "arn:",
+                  {
+                    "Ref": "AWS::Partition"
+                  },
+                  ":execute-api:",
+                  {
+                    "Ref": "AWS::Region"
+                  },
+                  ":",
+                  {
+                    "Ref": "AWS::AccountId"
+                  },
+                  ":",
+                  {
+                    "Ref": "HttpApi"
+                  },
+                  "/*"
+                ]
+              ]
+            }
+          }
+        },
+        "HttpApiIntegrationGetBlogsByUser": {
+          "Type": "AWS::ApiGatewayV2::Integration",
+          "Properties": {
+            "ApiId": {
+              "Ref": "HttpApi"
+            },
+            "IntegrationType": "AWS_PROXY",
+            "IntegrationUri": {
+              "Fn::GetAtt": [
+                "GetBlogsByUserLambdaFunction",
+                "Arn"
+              ]
+            },
+            "PayloadFormatVersion": "2.0",
+            "TimeoutInMillis": 30000
+          }
+        },
+        "HttpApiRouteGetApiBlogsUserVar": {
+          "Type": "AWS::ApiGatewayV2::Route",
+          "Properties": {
+            "ApiId": {
+              "Ref": "HttpApi"
+            },
+            "RouteKey": "GET /api/blogs/{user}",
+            "Target": {
+              "Fn::Join": [
+                "/",
+                [
+                  "integrations",
+                  {
+                    "Ref": "HttpApiIntegrationGetBlogsByUser"
+                  }
+                ]
+              ]
+            }
+          },
+          "DependsOn": "HttpApiIntegrationGetBlogsByUser"
+        },
+        "PostBlogLambdaPermissionHttpApi": {
+          "Type": "AWS::Lambda::Permission",
+          "Properties": {
+            "FunctionName": {
+              "Fn::GetAtt": [
+                "PostBlogLambdaFunction",
+                "Arn"
+              ]
+            },
+            "Action": "lambda:InvokeFunction",
+            "Principal": "apigateway.amazonaws.com",
+            "SourceArn": {
+              "Fn::Join": [
+                "",
+                [
+                  "arn:",
+                  {
+                    "Ref": "AWS::Partition"
+                  },
+                  ":execute-api:",
+                  {
+                    "Ref": "AWS::Region"
+                  },
+                  ":",
+                  {
+                    "Ref": "AWS::AccountId"
+                  },
+                  ":",
+                  {
+                    "Ref": "HttpApi"
+                  },
+                  "/*"
+                ]
+              ]
+            }
+          }
+        },
+        "HttpApiIntegrationPostBlog": {
+          "Type": "AWS::ApiGatewayV2::Integration",
+          "Properties": {
+            "ApiId": {
+              "Ref": "HttpApi"
+            },
+            "IntegrationType": "AWS_PROXY",
+            "IntegrationUri": {
+              "Fn::GetAtt": [
+                "PostBlogLambdaFunction",
+                "Arn"
+              ]
+            },
+            "PayloadFormatVersion": "2.0",
+            "TimeoutInMillis": 30000
+          }
+        },
+        "HttpApiRoutePostApiBlogs": {
+          "Type": "AWS::ApiGatewayV2::Route",
+          "Properties": {
+            "ApiId": {
+              "Ref": "HttpApi"
+            },
+            "RouteKey": "POST /api/blogs",
+            "Target": {
+              "Fn::Join": [
+                "/",
+                [
+                  "integrations",
+                  {
+                    "Ref": "HttpApiIntegrationPostBlog"
+                  }
+                ]
+              ]
+            }
+          },
+          "DependsOn": "HttpApiIntegrationPostBlog"
+        },
+        "UpdateBlogLambdaPermissionHttpApi": {
+          "Type": "AWS::Lambda::Permission",
+          "Properties": {
+            "FunctionName": {
+              "Fn::GetAtt": [
+                "UpdateBlogLambdaFunction",
+                "Arn"
+              ]
+            },
+            "Action": "lambda:InvokeFunction",
+            "Principal": "apigateway.amazonaws.com",
+            "SourceArn": {
+              "Fn::Join": [
+                "",
+                [
+                  "arn:",
+                  {
+                    "Ref": "AWS::Partition"
+                  },
+                  ":execute-api:",
+                  {
+                    "Ref": "AWS::Region"
+                  },
+                  ":",
+                  {
+                    "Ref": "AWS::AccountId"
+                  },
+                  ":",
+                  {
+                    "Ref": "HttpApi"
+                  },
+                  "/*"
+                ]
+              ]
+            }
+          }
+        },
+        "HttpApiIntegrationUpdateBlog": {
+          "Type": "AWS::ApiGatewayV2::Integration",
+          "Properties": {
+            "ApiId": {
+              "Ref": "HttpApi"
+            },
+            "IntegrationType": "AWS_PROXY",
+            "IntegrationUri": {
+              "Fn::GetAtt": [
+                "UpdateBlogLambdaFunction",
+                "Arn"
+              ]
+            },
+            "PayloadFormatVersion": "2.0",
+            "TimeoutInMillis": 30000
+          }
+        },
+        "HttpApiRoutePutApiBlogsIdVar": {
+          "Type": "AWS::ApiGatewayV2::Route",
+          "Properties": {
+            "ApiId": {
+              "Ref": "HttpApi"
+            },
+            "RouteKey": "PUT /api/blogs/{id}",
+            "Target": {
+              "Fn::Join": [
+                "/",
+                [
+                  "integrations",
+                  {
+                    "Ref": "HttpApiIntegrationUpdateBlog"
+                  }
+                ]
+              ]
+            }
+          },
+          "DependsOn": "HttpApiIntegrationUpdateBlog"
+        },
+        "DeleteBlogLambdaPermissionHttpApi": {
+          "Type": "AWS::Lambda::Permission",
+          "Properties": {
+            "FunctionName": {
+              "Fn::GetAtt": [
+                "DeleteBlogLambdaFunction",
+                "Arn"
+              ]
+            },
+            "Action": "lambda:InvokeFunction",
+            "Principal": "apigateway.amazonaws.com",
+            "SourceArn": {
+              "Fn::Join": [
+                "",
+                [
+                  "arn:",
+                  {
+                    "Ref": "AWS::Partition"
+                  },
+                  ":execute-api:",
+                  {
+                    "Ref": "AWS::Region"
+                  },
+                  ":",
+                  {
+                    "Ref": "AWS::AccountId"
+                  },
+                  ":",
+                  {
+                    "Ref": "HttpApi"
+                  },
+                  "/*"
+                ]
+              ]
+            }
+          }
+        },
+        "HttpApiIntegrationDeleteBlog": {
+          "Type": "AWS::ApiGatewayV2::Integration",
+          "Properties": {
+            "ApiId": {
+              "Ref": "HttpApi"
+            },
+            "IntegrationType": "AWS_PROXY",
+            "IntegrationUri": {
+              "Fn::GetAtt": [
+                "DeleteBlogLambdaFunction",
+                "Arn"
+              ]
+            },
+            "PayloadFormatVersion": "2.0",
+            "TimeoutInMillis": 30000
+          }
+        },
+        "HttpApiRouteDeleteApiBlogsIdVar": {
+          "Type": "AWS::ApiGatewayV2::Route",
+          "Properties": {
+            "ApiId": {
+              "Ref": "HttpApi"
+            },
+            "RouteKey": "DELETE /api/blogs/{id}",
+            "Target": {
+              "Fn::Join": [
+                "/",
+                [
+                  "integrations",
+                  {
+                    "Ref": "HttpApiIntegrationDeleteBlog"
+                  }
+                ]
+              ]
+            }
+          },
+          "DependsOn": "HttpApiIntegrationDeleteBlog"
+        },
+        "BlogDB": {
+          "Type": "AWS::DynamoDB::Table",
+          "Properties": {
+            "TableName": "blog-db",
+            "AttributeDefinitions": [
+              {
+                "AttributeName": "pk",
+                "AttributeType": "S"
+              },
+              {
+                "AttributeName": "sk",
+                "AttributeType": "S"
+              }
+            ],
+            "KeySchema": [
+              {
+                "AttributeName": "pk",
+                "KeyType": "HASH"
+              },
+              {
+                "AttributeName": "sk",
+                "KeyType": "RANGE"
+              }
+            ],
+            "BillingMode": "PAY_PER_REQUEST"
+          }
+        }
+      },
+      "Outputs": {
+        "ServerlessDeploymentBucketName": {
+          "Value": "serverless-framework-deployments-eu-north-1-c3c8091d-0b7f",
+          "Export": {
+            "Name": "sls-blog-api-dev-ServerlessDeploymentBucketName"
+          }
+        },
+        "GetBlogsLambdaFunctionQualifiedArn": {
+          "Description": "Current Lambda function version",
+          "Value": {
+            "Ref": "GetBlogsLambdaVersionYmRrK5BWYN2mQEHnqYP0945TqPpN52GICLbEGOAFqw"
+          },
+          "Export": {
+            "Name": "sls-blog-api-dev-GetBlogsLambdaFunctionQualifiedArn"
+          }
+        },
+        "GetBlogsByUserLambdaFunctionQualifiedArn": {
+          "Description": "Current Lambda function version",
+          "Value": {
+            "Ref": "GetBlogsByUserLambdaVersionHPHqeRU3MiC0dP3dlZ2DkwZlgMlnbaDfG3iGvqDnU"
+          },
+          "Export": {
+            "Name": "sls-blog-api-dev-GetBlogsByUserLambdaFunctionQualifiedArn"
+          }
+        },
+        "PostBlogLambdaFunctionQualifiedArn": {
+          "Description": "Current Lambda function version",
+          "Value": {
+            "Ref": "PostBlogLambdaVersionkN0JIhvsEZOlYe5ygUehwlFh2r6JlWqbN69uI9uirI"
+          },
+          "Export": {
+            "Name": "sls-blog-api-dev-PostBlogLambdaFunctionQualifiedArn"
+          }
+        },
+        "UpdateBlogLambdaFunctionQualifiedArn": {
+          "Description": "Current Lambda function version",
+          "Value": {
+            "Ref": "UpdateBlogLambdaVersion8pPw610qqQKWHsoKkUrEEgfXNM25oodFjsGkm2IIPM"
+          },
+          "Export": {
+            "Name": "sls-blog-api-dev-UpdateBlogLambdaFunctionQualifiedArn"
+          }
+        },
+        "DeleteBlogLambdaFunctionQualifiedArn": {
+          "Description": "Current Lambda function version",
+          "Value": {
+            "Ref": "DeleteBlogLambdaVersioneNZp5mO2yeJU4N20fZPC0ARmQpcttEDnVZVJMR8"
+          },
+          "Export": {
+            "Name": "sls-blog-api-dev-DeleteBlogLambdaFunctionQualifiedArn"
+          }
+        },
+        "HttpApiId": {
+          "Description": "Id of the HTTP API",
+          "Value": {
+            "Ref": "HttpApi"
+          },
+          "Export": {
+            "Name": "sls-blog-api-dev-HttpApiId"
+          }
+        },
+        "HttpApiUrl": {
+          "Description": "URL of the HTTP API",
+          "Value": {
+            "Fn::Join": [
+              "",
+              [
+                "https://",
+                {
+                  "Ref": "HttpApi"
+                },
+                ".execute-api.",
+                {
+                  "Ref": "AWS::Region"
+                },
+                ".",
+                {
+                  "Ref": "AWS::URLSuffix"
+                }
+              ]
+            ]
+          },
+          "Export": {
+            "Name": "sls-blog-api-dev-HttpApiUrl"
+          }
+        }
+      }
+    }
   }
 }

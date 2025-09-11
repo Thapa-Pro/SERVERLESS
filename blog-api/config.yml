@@ -1,0 +1,3 @@
+aws:
+  org: frontend2024thapa
+  role: arn:aws:iam::115851773339:role/BasicLambdaRole
