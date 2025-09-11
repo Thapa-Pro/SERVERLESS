@@ -9,9 +9,13 @@ provider:
   region: eu-north-1
   iam:
     role: arn:aws:iam::115851773339:role/BasicLambdaRole
-  # Uncomment to easily set up a custom domain. Read the docs for more details:
-  # https://www.serverless.com/framework/docs/providers/aws/guide/domains
-  # domain: api.example.com
+
+build:
+  esbuild:
+    minify: true #This will minify our code putting it in a single line. this makes runtime slightly faster.
+
+package:
+  individually: true # This will package each function separately. This makes deployment faster and smaller.
 
 functions:
   GetKey:

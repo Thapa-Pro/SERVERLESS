@@ -42,13 +42,18 @@
               "Properties": {
                 "Code": {
                   "S3Bucket": "serverless-framework-deployments-eu-north-1-c3c8091d-0b7f",
-                  "S3Key": "serverless/mmdb/dev/1757325845699-2025-09-08T10:04:05.699Z/mmdb.zip"
+                  "S3Key": "serverless/mmdb/dev/1757330012669-2025-09-08T11:13:32.669Z/mmdb-GetKey.zip"
                 },
                 "Handler": "functions/GetKey/index.handler",
                 "Runtime": "nodejs20.x",
                 "FunctionName": "mmdb-dev-GetKey",
                 "MemorySize": 1024,
                 "Timeout": 6,
+                "Environment": {
+                  "Variables": {
+                    "NODE_OPTIONS": "--enable-source-maps"
+                  }
+                },
                 "Role": "arn:aws:iam::115851773339:role/BasicLambdaRole"
               },
               "DependsOn": [
@@ -60,13 +65,18 @@
               "Properties": {
                 "Code": {
                   "S3Bucket": "serverless-framework-deployments-eu-north-1-c3c8091d-0b7f",
-                  "S3Key": "serverless/mmdb/dev/1757325845699-2025-09-08T10:04:05.699Z/mmdb.zip"
+                  "S3Key": "serverless/mmdb/dev/1757330012669-2025-09-08T11:13:32.669Z/mmdb-GetMovies.zip"
                 },
                 "Handler": "functions/GetMovies/index.handler",
                 "Runtime": "nodejs20.x",
                 "FunctionName": "mmdb-dev-GetMovies",
                 "MemorySize": 1024,
                 "Timeout": 6,
+                "Environment": {
+                  "Variables": {
+                    "NODE_OPTIONS": "--enable-source-maps"
+                  }
+                },
                 "Role": "arn:aws:iam::115851773339:role/BasicLambdaRole"
               },
               "DependsOn": [
@@ -78,47 +88,52 @@
               "Properties": {
                 "Code": {
                   "S3Bucket": "serverless-framework-deployments-eu-north-1-c3c8091d-0b7f",
-                  "S3Key": "serverless/mmdb/dev/1757325845699-2025-09-08T10:04:05.699Z/mmdb.zip"
+                  "S3Key": "serverless/mmdb/dev/1757330012669-2025-09-08T11:13:32.669Z/mmdb-PostMovie.zip"
                 },
                 "Handler": "functions/PostMovie/index.handler",
                 "Runtime": "nodejs20.x",
                 "FunctionName": "mmdb-dev-PostMovie",
                 "MemorySize": 1024,
                 "Timeout": 6,
+                "Environment": {
+                  "Variables": {
+                    "NODE_OPTIONS": "--enable-source-maps"
+                  }
+                },
                 "Role": "arn:aws:iam::115851773339:role/BasicLambdaRole"
               },
               "DependsOn": [
                 "PostMovieLogGroup"
               ]
             },
-            "GetKeyLambdaVersionvoOusjOX4gdsSSZ7vBgKctB4P69HbvYfQoEA8fRgY": {
-              "Type": "AWS::Lambda::Version",
-              "DeletionPolicy": "Retain",
-              "Properties": {
-                "FunctionName": {
-                  "Ref": "GetKeyLambdaFunction"
-                },
-                "CodeSha256": "1u2wWLEMX13wLwFG1o6PH14hFD1bu9koGAEm21xMJ08="
-              }
-            },
-            "GetMoviesLambdaVersionkTwpXHGAxX3T1bd4pGmXgEPzubBlcFQOCXEQVrKXw": {
+            "GetMoviesLambdaVersionDWIQSHBA3bmHKsYWT0XSc8s5ZJWPX8MGNJcC52ZD5A": {
               "Type": "AWS::Lambda::Version",
               "DeletionPolicy": "Retain",
               "Properties": {
                 "FunctionName": {
                   "Ref": "GetMoviesLambdaFunction"
                 },
-                "CodeSha256": "1u2wWLEMX13wLwFG1o6PH14hFD1bu9koGAEm21xMJ08="
+                "CodeSha256": "vQo70HueUFIYJ9k0kr5ciWgmxj2QaMjUzTE61mfQGjQ="
               }
             },
-            "PostMovieLambdaVersionhwwvTAnSLcGNNKFbximO0EyPngFkpgOPO0yRdZuoQ2U": {
+            "GetKeyLambdaVersionQSTIWrdIasG18H07WfUl20JRo26nqhLWxJHOf1Yq1o": {
+              "Type": "AWS::Lambda::Version",
+              "DeletionPolicy": "Retain",
+              "Properties": {
+                "FunctionName": {
+                  "Ref": "GetKeyLambdaFunction"
+                },
+                "CodeSha256": "2WgoGHK89MV8KRHnjfG/km1Ol3/yoFwAWgAoxtTLbwU="
+              }
+            },
+            "PostMovieLambdaVersiondSjgRIzll6VPQ4NxEGtQL3KJb31EOodxruxNhYCdHsw": {
               "Type": "AWS::Lambda::Version",
               "DeletionPolicy": "Retain",
               "Properties": {
                 "FunctionName": {
                   "Ref": "PostMovieLambdaFunction"
                 },
-                "CodeSha256": "1u2wWLEMX13wLwFG1o6PH14hFD1bu9koGAEm21xMJ08="
+                "CodeSha256": "6GI/mU1nl48a8pEFBM5/qsG3DA2ce2Y0oWumHdV4Tdw="
               }
             },
             "HttpApi": {
@@ -354,28 +369,28 @@
                 "Name": "sls-mmdb-dev-ServerlessDeploymentBucketName"
               }
             },
-            "GetKeyLambdaFunctionQualifiedArn": {
-              "Description": "Current Lambda function version",
-              "Value": {
-                "Ref": "GetKeyLambdaVersionvoOusjOX4gdsSSZ7vBgKctB4P69HbvYfQoEA8fRgY"
-              },
-              "Export": {
-                "Name": "sls-mmdb-dev-GetKeyLambdaFunctionQualifiedArn"
-              }
-            },
             "GetMoviesLambdaFunctionQualifiedArn": {
               "Description": "Current Lambda function version",
               "Value": {
-                "Ref": "GetMoviesLambdaVersionkTwpXHGAxX3T1bd4pGmXgEPzubBlcFQOCXEQVrKXw"
+                "Ref": "GetMoviesLambdaVersionDWIQSHBA3bmHKsYWT0XSc8s5ZJWPX8MGNJcC52ZD5A"
               },
               "Export": {
                 "Name": "sls-mmdb-dev-GetMoviesLambdaFunctionQualifiedArn"
               }
             },
+            "GetKeyLambdaFunctionQualifiedArn": {
+              "Description": "Current Lambda function version",
+              "Value": {
+                "Ref": "GetKeyLambdaVersionQSTIWrdIasG18H07WfUl20JRo26nqhLWxJHOf1Yq1o"
+              },
+              "Export": {
+                "Name": "sls-mmdb-dev-GetKeyLambdaFunctionQualifiedArn"
+              }
+            },
             "PostMovieLambdaFunctionQualifiedArn": {
               "Description": "Current Lambda function version",
               "Value": {
-                "Ref": "PostMovieLambdaVersionhwwvTAnSLcGNNKFbximO0EyPngFkpgOPO0yRdZuoQ2U"
+                "Ref": "PostMovieLambdaVersiondSjgRIzll6VPQ4NxEGtQL3KJb31EOodxruxNhYCdHsw"
               },
               "Export": {
                 "Name": "sls-mmdb-dev-PostMovieLambdaFunctionQualifiedArn"
@@ -419,6 +434,17 @@
         },
         "vpc": {}
       },
+      "build": {
+        "esbuild": {
+          "minify": true
+        }
+      },
+      "package": {
+        "individually": true,
+        "artifactsS3KeyDirname": "serverless/mmdb/dev/code-artifacts",
+        "deploymentBucket": "serverless-framework-deployments-eu-north-1-c3c8091d-0b7f",
+        "artifactDirectoryName": "serverless/mmdb/dev/1757330012669-2025-09-08T11:13:32.669Z"
+      },
       "functions": {
         "GetKey": {
           "handler": "functions/GetKey/index.handler",
@@ -433,12 +459,17 @@
             }
           ],
           "name": "mmdb-dev-GetKey",
-          "package": {},
+          "environment": {
+            "NODE_OPTIONS": "--enable-source-maps"
+          },
+          "package": {
+            "artifact": "C:\\Users\\bachc\\OneDrive\\Desktop\\Serverless\\SERVERLESS ++\\mmdb\\.serverless\\build\\mmdb-GetKey.zip"
+          },
           "memory": 1024,
           "timeout": 6,
           "runtime": "nodejs20.x",
           "vpc": {},
-          "versionLogicalId": "GetKeyLambdaVersionvoOusjOX4gdsSSZ7vBgKctB4P69HbvYfQoEA8fRgY"
+          "versionLogicalId": "GetKeyLambdaVersionQSTIWrdIasG18H07WfUl20JRo26nqhLWxJHOf1Yq1o"
         },
         "GetMovies": {
           "handler": "functions/GetMovies/index.handler",
@@ -453,12 +484,17 @@
             }
           ],
           "name": "mmdb-dev-GetMovies",
-          "package": {},
+          "environment": {
+            "NODE_OPTIONS": "--enable-source-maps"
+          },
+          "package": {
+            "artifact": "C:\\Users\\bachc\\OneDrive\\Desktop\\Serverless\\SERVERLESS ++\\mmdb\\.serverless\\build\\mmdb-GetMovies.zip"
+          },
           "memory": 1024,
           "timeout": 6,
           "runtime": "nodejs20.x",
           "vpc": {},
-          "versionLogicalId": "GetMoviesLambdaVersionkTwpXHGAxX3T1bd4pGmXgEPzubBlcFQOCXEQVrKXw"
+          "versionLogicalId": "GetMoviesLambdaVersionDWIQSHBA3bmHKsYWT0XSc8s5ZJWPX8MGNJcC52ZD5A"
         },
         "PostMovie": {
           "handler": "functions/PostMovie/index.handler",
@@ -473,12 +509,17 @@
             }
           ],
           "name": "mmdb-dev-PostMovie",
-          "package": {},
+          "environment": {
+            "NODE_OPTIONS": "--enable-source-maps"
+          },
+          "package": {
+            "artifact": "C:\\Users\\bachc\\OneDrive\\Desktop\\Serverless\\SERVERLESS ++\\mmdb\\.serverless\\build\\mmdb-PostMovie.zip"
+          },
           "memory": 1024,
           "timeout": 6,
           "runtime": "nodejs20.x",
           "vpc": {},
-          "versionLogicalId": "PostMovieLambdaVersionhwwvTAnSLcGNNKFbximO0EyPngFkpgOPO0yRdZuoQ2U"
+          "versionLogicalId": "PostMovieLambdaVersiondSjgRIzll6VPQ4NxEGtQL3KJb31EOodxruxNhYCdHsw"
         }
       }
     },
@@ -518,13 +559,18 @@
             "Properties": {
               "Code": {
                 "S3Bucket": "serverless-framework-deployments-eu-north-1-c3c8091d-0b7f",
-                "S3Key": "serverless/mmdb/dev/1757325845699-2025-09-08T10:04:05.699Z/mmdb.zip"
+                "S3Key": "serverless/mmdb/dev/1757330012669-2025-09-08T11:13:32.669Z/mmdb-GetKey.zip"
               },
               "Handler": "functions/GetKey/index.handler",
               "Runtime": "nodejs20.x",
               "FunctionName": "mmdb-dev-GetKey",
               "MemorySize": 1024,
               "Timeout": 6,
+              "Environment": {
+                "Variables": {
+                  "NODE_OPTIONS": "--enable-source-maps"
+                }
+              },
               "Role": "arn:aws:iam::115851773339:role/BasicLambdaRole"
             },
             "DependsOn": [
@@ -536,13 +582,18 @@
             "Properties": {
               "Code": {
                 "S3Bucket": "serverless-framework-deployments-eu-north-1-c3c8091d-0b7f",
-                "S3Key": "serverless/mmdb/dev/1757325845699-2025-09-08T10:04:05.699Z/mmdb.zip"
+                "S3Key": "serverless/mmdb/dev/1757330012669-2025-09-08T11:13:32.669Z/mmdb-GetMovies.zip"
               },
               "Handler": "functions/GetMovies/index.handler",
               "Runtime": "nodejs20.x",
               "FunctionName": "mmdb-dev-GetMovies",
               "MemorySize": 1024,
               "Timeout": 6,
+              "Environment": {
+                "Variables": {
+                  "NODE_OPTIONS": "--enable-source-maps"
+                }
+              },
               "Role": "arn:aws:iam::115851773339:role/BasicLambdaRole"
             },
             "DependsOn": [
@@ -554,47 +605,52 @@
             "Properties": {
               "Code": {
                 "S3Bucket": "serverless-framework-deployments-eu-north-1-c3c8091d-0b7f",
-                "S3Key": "serverless/mmdb/dev/1757325845699-2025-09-08T10:04:05.699Z/mmdb.zip"
+                "S3Key": "serverless/mmdb/dev/1757330012669-2025-09-08T11:13:32.669Z/mmdb-PostMovie.zip"
               },
               "Handler": "functions/PostMovie/index.handler",
               "Runtime": "nodejs20.x",
               "FunctionName": "mmdb-dev-PostMovie",
               "MemorySize": 1024,
               "Timeout": 6,
+              "Environment": {
+                "Variables": {
+                  "NODE_OPTIONS": "--enable-source-maps"
+                }
+              },
               "Role": "arn:aws:iam::115851773339:role/BasicLambdaRole"
             },
             "DependsOn": [
               "PostMovieLogGroup"
             ]
           },
-          "GetKeyLambdaVersionvoOusjOX4gdsSSZ7vBgKctB4P69HbvYfQoEA8fRgY": {
-            "Type": "AWS::Lambda::Version",
-            "DeletionPolicy": "Retain",
-            "Properties": {
-              "FunctionName": {
-                "Ref": "GetKeyLambdaFunction"
-              },
-              "CodeSha256": "1u2wWLEMX13wLwFG1o6PH14hFD1bu9koGAEm21xMJ08="
-            }
-          },
-          "GetMoviesLambdaVersionkTwpXHGAxX3T1bd4pGmXgEPzubBlcFQOCXEQVrKXw": {
+          "GetMoviesLambdaVersionDWIQSHBA3bmHKsYWT0XSc8s5ZJWPX8MGNJcC52ZD5A": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "GetMoviesLambdaFunction"
               },
-              "CodeSha256": "1u2wWLEMX13wLwFG1o6PH14hFD1bu9koGAEm21xMJ08="
+              "CodeSha256": "vQo70HueUFIYJ9k0kr5ciWgmxj2QaMjUzTE61mfQGjQ="
             }
           },
-          "PostMovieLambdaVersionhwwvTAnSLcGNNKFbximO0EyPngFkpgOPO0yRdZuoQ2U": {
+          "GetKeyLambdaVersionQSTIWrdIasG18H07WfUl20JRo26nqhLWxJHOf1Yq1o": {
+            "Type": "AWS::Lambda::Version",
+            "DeletionPolicy": "Retain",
+            "Properties": {
+              "FunctionName": {
+                "Ref": "GetKeyLambdaFunction"
+              },
+              "CodeSha256": "2WgoGHK89MV8KRHnjfG/km1Ol3/yoFwAWgAoxtTLbwU="
+            }
+          },
+          "PostMovieLambdaVersiondSjgRIzll6VPQ4NxEGtQL3KJb31EOodxruxNhYCdHsw": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "PostMovieLambdaFunction"
               },
-              "CodeSha256": "1u2wWLEMX13wLwFG1o6PH14hFD1bu9koGAEm21xMJ08="
+              "CodeSha256": "6GI/mU1nl48a8pEFBM5/qsG3DA2ce2Y0oWumHdV4Tdw="
             }
           },
           "HttpApi": {
@@ -830,28 +886,28 @@
               "Name": "sls-mmdb-dev-ServerlessDeploymentBucketName"
             }
           },
-          "GetKeyLambdaFunctionQualifiedArn": {
-            "Description": "Current Lambda function version",
-            "Value": {
-              "Ref": "GetKeyLambdaVersionvoOusjOX4gdsSSZ7vBgKctB4P69HbvYfQoEA8fRgY"
-            },
-            "Export": {
-              "Name": "sls-mmdb-dev-GetKeyLambdaFunctionQualifiedArn"
-            }
-          },
           "GetMoviesLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "GetMoviesLambdaVersionkTwpXHGAxX3T1bd4pGmXgEPzubBlcFQOCXEQVrKXw"
+              "Ref": "GetMoviesLambdaVersionDWIQSHBA3bmHKsYWT0XSc8s5ZJWPX8MGNJcC52ZD5A"
             },
             "Export": {
               "Name": "sls-mmdb-dev-GetMoviesLambdaFunctionQualifiedArn"
             }
           },
+          "GetKeyLambdaFunctionQualifiedArn": {
+            "Description": "Current Lambda function version",
+            "Value": {
+              "Ref": "GetKeyLambdaVersionQSTIWrdIasG18H07WfUl20JRo26nqhLWxJHOf1Yq1o"
+            },
+            "Export": {
+              "Name": "sls-mmdb-dev-GetKeyLambdaFunctionQualifiedArn"
+            }
+          },
           "PostMovieLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "PostMovieLambdaVersionhwwvTAnSLcGNNKFbximO0EyPngFkpgOPO0yRdZuoQ2U"
+              "Ref": "PostMovieLambdaVersiondSjgRIzll6VPQ4NxEGtQL3KJb31EOodxruxNhYCdHsw"
             },
             "Export": {
               "Name": "sls-mmdb-dev-PostMovieLambdaFunctionQualifiedArn"
@@ -904,7 +960,7 @@
       "serviceProvider": null,
       "instanceParameters": null
     },
-    "serviceRawFile": "# \"org\" ensures this Service is used with the correct Serverless Framework Access Key.\norg: frontend2024thapa\n# \"service\" is the name of this project. This will also be added to your AWS resource names.\nservice: mmdb\n\nprovider:\n  name: aws\n  runtime: nodejs20.x\n  region: eu-north-1\n  iam:\n    role: arn:aws:iam::115851773339:role/BasicLambdaRole\n  # Uncomment to easily set up a custom domain. Read the docs for more details:\n  # https://www.serverless.com/framework/docs/providers/aws/guide/domains\n  # domain: api.example.com\n\nfunctions:\n  GetKey:\n    handler: functions/GetKey/index.handler\n    events:\n      - httpApi:\n          path: /api/keys\n          method: GET\n\n  GetMovies:\n    handler: functions/GetMovies/index.handler\n    events:\n      - httpApi:\n          path: /api/movies\n          method: GET\n\n  PostMovie:\n    handler: functions/PostMovie/index.handler\n    events:\n      - httpApi:\n          path: /api/movies\n          method: POST\n",
+    "serviceRawFile": "# \"org\" ensures this Service is used with the correct Serverless Framework Access Key.\norg: frontend2024thapa\n# \"service\" is the name of this project. This will also be added to your AWS resource names.\nservice: mmdb\n\nprovider:\n  name: aws\n  runtime: nodejs20.x\n  region: eu-north-1\n  iam:\n    role: arn:aws:iam::115851773339:role/BasicLambdaRole\n\nbuild:\n  esbuild:\n    minify: true #This will minify our code putting it in a single line. this makes runtime slightly faster.\n\npackage:\n  individually: true # This will package each function separately. This makes deployment faster and smaller.\n\nfunctions:\n  GetKey:\n    handler: functions/GetKey/index.handler\n    events:\n      - httpApi:\n          path: /api/keys\n          method: GET\n\n  GetMovies:\n    handler: functions/GetMovies/index.handler\n    events:\n      - httpApi:\n          path: /api/movies\n          method: GET\n\n  PostMovie:\n    handler: functions/PostMovie/index.handler\n    events:\n      - httpApi:\n          path: /api/movies\n          method: POST\n",
     "command": [
       "deploy"
     ],
@@ -917,18 +973,18 @@
     "serviceProviderAwsCfStackName": "mmdb-dev",
     "serviceProviderAwsCfStackId": "arn:aws:cloudformation:eu-north-1:115851773339:stack/mmdb-dev/cba39c80-8b05-11f0-8f96-0a5840b88019",
     "serviceProviderAwsCfStackCreated": "2025-09-06T09:42:25.719Z",
-    "serviceProviderAwsCfStackUpdated": "2025-09-08T09:55:05.845Z",
+    "serviceProviderAwsCfStackUpdated": "2025-09-08T11:04:46.042Z",
     "serviceProviderAwsCfStackStatus": "UPDATE_COMPLETE",
     "serviceProviderAwsCfStackOutputs": [
       {
         "OutputKey": "GetKeyLambdaFunctionQualifiedArn",
-        "OutputValue": "arn:aws:lambda:eu-north-1:115851773339:function:mmdb-dev-GetKey:11",
+        "OutputValue": "arn:aws:lambda:eu-north-1:115851773339:function:mmdb-dev-GetKey:13",
         "Description": "Current Lambda function version",
         "ExportName": "sls-mmdb-dev-GetKeyLambdaFunctionQualifiedArn"
       },
       {
         "OutputKey": "GetMoviesLambdaFunctionQualifiedArn",
-        "OutputValue": "arn:aws:lambda:eu-north-1:115851773339:function:mmdb-dev-GetMovies:11",
+        "OutputValue": "arn:aws:lambda:eu-north-1:115851773339:function:mmdb-dev-GetMovies:13",
         "Description": "Current Lambda function version",
         "ExportName": "sls-mmdb-dev-GetMoviesLambdaFunctionQualifiedArn"
       },
@@ -940,7 +996,7 @@
       },
       {
         "OutputKey": "PostMovieLambdaFunctionQualifiedArn",
-        "OutputValue": "arn:aws:lambda:eu-north-1:115851773339:function:mmdb-dev-PostMovie:6",
+        "OutputValue": "arn:aws:lambda:eu-north-1:115851773339:function:mmdb-dev-PostMovie:8",
         "Description": "Current Lambda function version",
         "ExportName": "sls-mmdb-dev-PostMovieLambdaFunctionQualifiedArn"
       },
@@ -983,13 +1039,18 @@
           "Properties": {
             "Code": {
               "S3Bucket": "serverless-framework-deployments-eu-north-1-c3c8091d-0b7f",
-              "S3Key": "serverless/mmdb/dev/1757325845699-2025-09-08T10:04:05.699Z/mmdb.zip"
+              "S3Key": "serverless/mmdb/dev/1757330012669-2025-09-08T11:13:32.669Z/mmdb-GetKey.zip"
             },
             "Handler": "functions/GetKey/index.handler",
             "Runtime": "nodejs20.x",
             "FunctionName": "mmdb-dev-GetKey",
             "MemorySize": 1024,
             "Timeout": 6,
+            "Environment": {
+              "Variables": {
+                "NODE_OPTIONS": "--enable-source-maps"
+              }
+            },
             "Role": "arn:aws:iam::115851773339:role/BasicLambdaRole"
           },
           "DependsOn": [
@@ -1001,13 +1062,18 @@
           "Properties": {
             "Code": {
               "S3Bucket": "serverless-framework-deployments-eu-north-1-c3c8091d-0b7f",
-              "S3Key": "serverless/mmdb/dev/1757325845699-2025-09-08T10:04:05.699Z/mmdb.zip"
+              "S3Key": "serverless/mmdb/dev/1757330012669-2025-09-08T11:13:32.669Z/mmdb-GetMovies.zip"
             },
             "Handler": "functions/GetMovies/index.handler",
             "Runtime": "nodejs20.x",
             "FunctionName": "mmdb-dev-GetMovies",
             "MemorySize": 1024,
             "Timeout": 6,
+            "Environment": {
+              "Variables": {
+                "NODE_OPTIONS": "--enable-source-maps"
+              }
+            },
             "Role": "arn:aws:iam::115851773339:role/BasicLambdaRole"
           },
           "DependsOn": [
@@ -1019,47 +1085,52 @@
           "Properties": {
             "Code": {
               "S3Bucket": "serverless-framework-deployments-eu-north-1-c3c8091d-0b7f",
-              "S3Key": "serverless/mmdb/dev/1757325845699-2025-09-08T10:04:05.699Z/mmdb.zip"
+              "S3Key": "serverless/mmdb/dev/1757330012669-2025-09-08T11:13:32.669Z/mmdb-PostMovie.zip"
             },
             "Handler": "functions/PostMovie/index.handler",
             "Runtime": "nodejs20.x",
             "FunctionName": "mmdb-dev-PostMovie",
             "MemorySize": 1024,
             "Timeout": 6,
+            "Environment": {
+              "Variables": {
+                "NODE_OPTIONS": "--enable-source-maps"
+              }
+            },
             "Role": "arn:aws:iam::115851773339:role/BasicLambdaRole"
           },
           "DependsOn": [
             "PostMovieLogGroup"
           ]
         },
-        "GetKeyLambdaVersionvoOusjOX4gdsSSZ7vBgKctB4P69HbvYfQoEA8fRgY": {
-          "Type": "AWS::Lambda::Version",
-          "DeletionPolicy": "Retain",
-          "Properties": {
-            "FunctionName": {
-              "Ref": "GetKeyLambdaFunction"
-            },
-            "CodeSha256": "1u2wWLEMX13wLwFG1o6PH14hFD1bu9koGAEm21xMJ08="
-          }
-        },
-        "GetMoviesLambdaVersionkTwpXHGAxX3T1bd4pGmXgEPzubBlcFQOCXEQVrKXw": {
+        "GetMoviesLambdaVersionDWIQSHBA3bmHKsYWT0XSc8s5ZJWPX8MGNJcC52ZD5A": {
           "Type": "AWS::Lambda::Version",
           "DeletionPolicy": "Retain",
           "Properties": {
             "FunctionName": {
               "Ref": "GetMoviesLambdaFunction"
             },
-            "CodeSha256": "1u2wWLEMX13wLwFG1o6PH14hFD1bu9koGAEm21xMJ08="
+            "CodeSha256": "vQo70HueUFIYJ9k0kr5ciWgmxj2QaMjUzTE61mfQGjQ="
           }
         },
-        "PostMovieLambdaVersionhwwvTAnSLcGNNKFbximO0EyPngFkpgOPO0yRdZuoQ2U": {
+        "GetKeyLambdaVersionQSTIWrdIasG18H07WfUl20JRo26nqhLWxJHOf1Yq1o": {
+          "Type": "AWS::Lambda::Version",
+          "DeletionPolicy": "Retain",
+          "Properties": {
+            "FunctionName": {
+              "Ref": "GetKeyLambdaFunction"
+            },
+            "CodeSha256": "2WgoGHK89MV8KRHnjfG/km1Ol3/yoFwAWgAoxtTLbwU="
+          }
+        },
+        "PostMovieLambdaVersiondSjgRIzll6VPQ4NxEGtQL3KJb31EOodxruxNhYCdHsw": {
           "Type": "AWS::Lambda::Version",
           "DeletionPolicy": "Retain",
           "Properties": {
             "FunctionName": {
               "Ref": "PostMovieLambdaFunction"
             },
-            "CodeSha256": "1u2wWLEMX13wLwFG1o6PH14hFD1bu9koGAEm21xMJ08="
+            "CodeSha256": "6GI/mU1nl48a8pEFBM5/qsG3DA2ce2Y0oWumHdV4Tdw="
           }
         },
         "HttpApi": {
@@ -1295,28 +1366,28 @@
             "Name": "sls-mmdb-dev-ServerlessDeploymentBucketName"
           }
         },
-        "GetKeyLambdaFunctionQualifiedArn": {
-          "Description": "Current Lambda function version",
-          "Value": {
-            "Ref": "GetKeyLambdaVersionvoOusjOX4gdsSSZ7vBgKctB4P69HbvYfQoEA8fRgY"
-          },
-          "Export": {
-            "Name": "sls-mmdb-dev-GetKeyLambdaFunctionQualifiedArn"
-          }
-        },
         "GetMoviesLambdaFunctionQualifiedArn": {
           "Description": "Current Lambda function version",
           "Value": {
-            "Ref": "GetMoviesLambdaVersionkTwpXHGAxX3T1bd4pGmXgEPzubBlcFQOCXEQVrKXw"
+            "Ref": "GetMoviesLambdaVersionDWIQSHBA3bmHKsYWT0XSc8s5ZJWPX8MGNJcC52ZD5A"
           },
           "Export": {
             "Name": "sls-mmdb-dev-GetMoviesLambdaFunctionQualifiedArn"
           }
         },
+        "GetKeyLambdaFunctionQualifiedArn": {
+          "Description": "Current Lambda function version",
+          "Value": {
+            "Ref": "GetKeyLambdaVersionQSTIWrdIasG18H07WfUl20JRo26nqhLWxJHOf1Yq1o"
+          },
+          "Export": {
+            "Name": "sls-mmdb-dev-GetKeyLambdaFunctionQualifiedArn"
+          }
+        },
         "PostMovieLambdaFunctionQualifiedArn": {
           "Description": "Current Lambda function version",
           "Value": {
-            "Ref": "PostMovieLambdaVersionhwwvTAnSLcGNNKFbximO0EyPngFkpgOPO0yRdZuoQ2U"
+            "Ref": "PostMovieLambdaVersiondSjgRIzll6VPQ4NxEGtQL3KJb31EOodxruxNhYCdHsw"
           },
           "Export": {
             "Name": "sls-mmdb-dev-PostMovieLambdaFunctionQualifiedArn"
