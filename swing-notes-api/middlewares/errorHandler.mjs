@@ -2,10 +2,28 @@ import { sendResponse } from "../responses/index.mjs";
 
 export const errorHandler = () => ({
   onError: (handler) => {
-    const msg = handler.error?.message || "Bad request";
-    const code =
-      msg === "Invalid API Key" ? 401 : msg === "Note not found" ? 404 : 400;
+    const message = handler.error?.message || "Bad request";
 
-    handler.response = sendResponse(code, { message: msg });
+    // Map specific error messages to HTTP codes
+    const statusByMessage = {
+      "Invalid API Key": 401,
+      "Note not found": 404,
+    };
+
+    const status = statusByMessage[message] ?? 400;
+    handler.response = sendResponse(status, { message });
   },
 });
+
+/* from mmdb style guide
+
+import { sendResponse } from "../responses/index.mjs";
+
+export const errorHandler = () => ({
+  onError: (handler) => {
+    handler.response = sendResponse(401, { message: handler.error.message });
+  },
+});
+
+
+*/
